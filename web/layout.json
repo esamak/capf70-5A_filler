@@ -1,0 +1,4704 @@
+{
+ "source": "CAPF 70-5A, 8 JUN 20",
+ "grades": [
+  "Q",
+  "QT",
+  "U",
+  "V",
+  "NP"
+ ],
+ "checktype": {
+  "annual": [
+   36.1,
+   743.31
+  ],
+  "abbreviated": [
+   177.82,
+   743.31
+  ]
+ },
+ "tasks": [
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Certificates and Documents",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     607.71
+    ],
+    "QT": [
+     252.46,
+     607.71
+    ],
+    "U": [
+     262.54,
+     607.71
+    ],
+    "V": [
+     272.62,
+     607.71
+    ],
+    "NP": [
+     284.98,
+     607.71
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Airworthiness Requirements",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     595.71
+    ],
+    "QT": [
+     252.46,
+     595.71
+    ],
+    "U": [
+     262.54,
+     595.71
+    ],
+    "V": [
+     272.62,
+     595.71
+    ],
+    "NP": [
+     284.98,
+     595.71
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Weather Information",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     583.71
+    ],
+    "QT": [
+     252.46,
+     583.71
+    ],
+    "U": [
+     262.54,
+     583.71
+    ],
+    "V": [
+     272.62,
+     583.71
+    ],
+    "NP": [
+     284.98,
+     583.71
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Cross-Country Flight Planning",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     571.71
+    ],
+    "QT": [
+     252.46,
+     571.71
+    ],
+    "U": [
+     262.54,
+     571.71
+    ],
+    "V": [
+     272.62,
+     571.71
+    ],
+    "NP": [
+     284.98,
+     571.71
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "E",
+   "name": "National Airspace System",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.09,
+     559.11
+    ],
+    "QT": [
+     252.45,
+     559.11
+    ],
+    "U": [
+     262.53,
+     559.11
+    ],
+    "V": [
+     272.61,
+     559.11
+    ],
+    "NP": [
+     284.98,
+     559.11
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.E",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "F",
+   "name": "Performance and Limitations",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     547.11
+    ],
+    "QT": [
+     252.46,
+     547.11
+    ],
+    "U": [
+     262.54,
+     547.11
+    ],
+    "V": [
+     272.62,
+     547.11
+    ],
+    "NP": [
+     284.98,
+     547.11
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.F",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "G",
+   "name": "Operations of Systems",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     535.11
+    ],
+    "QT": [
+     252.46,
+     535.11
+    ],
+    "U": [
+     262.54,
+     535.11
+    ],
+    "V": [
+     272.62,
+     535.11
+    ],
+    "NP": [
+     284.98,
+     535.11
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.G",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "H",
+   "name": "Human Factors",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     523.11
+    ],
+    "QT": [
+     252.46,
+     523.11
+    ],
+    "U": [
+     262.54,
+     523.11
+    ],
+    "V": [
+     272.62,
+     523.11
+    ],
+    "NP": [
+     284.98,
+     523.11
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.H",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "I",
+   "name": "Seaplane Char, Bases, and Rules",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     511.11
+    ],
+    "QT": [
+     252.46,
+     511.11
+    ],
+    "U": [
+     262.54,
+     511.11
+    ],
+    "V": [
+     272.62,
+     511.11
+    ],
+    "NP": [
+     284.98,
+     511.11
+    ]
+   },
+   "area": "I. Preflight Preparation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "I.I",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Preflight Assessment",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     486.51
+    ],
+    "QT": [
+     252.46,
+     486.51
+    ],
+    "U": [
+     262.54,
+     486.51
+    ],
+    "V": [
+     272.62,
+     486.51
+    ],
+    "NP": [
+     284.98,
+     486.51
+    ]
+   },
+   "area": "II. Preflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "II.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Flight Deck Management",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     474.51
+    ],
+    "QT": [
+     252.46,
+     474.51
+    ],
+    "U": [
+     262.54,
+     474.51
+    ],
+    "V": [
+     272.62,
+     474.51
+    ],
+    "NP": [
+     284.98,
+     474.51
+    ]
+   },
+   "area": "II. Preflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "II.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Engine Starting",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     462.51
+    ],
+    "QT": [
+     252.46,
+     462.51
+    ],
+    "U": [
+     262.54,
+     462.51
+    ],
+    "V": [
+     272.62,
+     462.51
+    ],
+    "NP": [
+     284.98,
+     462.51
+    ]
+   },
+   "area": "II. Preflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "II.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Taxiing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     450.51
+    ],
+    "QT": [
+     252.46,
+     450.51
+    ],
+    "U": [
+     262.54,
+     450.51
+    ],
+    "V": [
+     272.62,
+     450.51
+    ],
+    "NP": [
+     284.98,
+     450.51
+    ]
+   },
+   "area": "II. Preflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "II.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "E",
+   "name": "Taxiing and Sailing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     438.51
+    ],
+    "QT": [
+     252.46,
+     438.51
+    ],
+    "U": [
+     262.54,
+     438.51
+    ],
+    "V": [
+     272.62,
+     438.51
+    ],
+    "NP": [
+     284.98,
+     438.51
+    ]
+   },
+   "area": "II. Preflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "II.E",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "F",
+   "name": "Before Takeoff Check",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     426.51
+    ],
+    "QT": [
+     252.46,
+     426.51
+    ],
+    "U": [
+     262.54,
+     426.51
+    ],
+    "V": [
+     272.62,
+     426.51
+    ],
+    "NP": [
+     284.98,
+     426.51
+    ]
+   },
+   "area": "II. Preflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "II.F",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Comm and ATC Light Signals",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     401.91
+    ],
+    "QT": [
+     252.46,
+     401.91
+    ],
+    "U": [
+     262.54,
+     401.91
+    ],
+    "V": [
+     272.62,
+     401.91
+    ],
+    "NP": [
+     284.98,
+     401.91
+    ]
+   },
+   "area": "III. Airport Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "III.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Traffic Patterns",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     389.91
+    ],
+    "QT": [
+     252.46,
+     389.91
+    ],
+    "U": [
+     262.54,
+     389.91
+    ],
+    "V": [
+     272.62,
+     389.91
+    ],
+    "NP": [
+     284.98,
+     389.91
+    ]
+   },
+   "area": "III. Airport Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "III.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Normal Takeoff and Climb",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     365.31
+    ],
+    "QT": [
+     252.46,
+     365.31
+    ],
+    "U": [
+     262.54,
+     365.31
+    ],
+    "V": [
+     272.38,
+     365.31
+    ],
+    "NP": [
+     284.5,
+     365.31
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Normal Approach and Landing",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     353.31
+    ],
+    "QT": [
+     252.46,
+     353.31
+    ],
+    "U": [
+     262.54,
+     353.31
+    ],
+    "V": [
+     272.38,
+     353.31
+    ],
+    "NP": [
+     284.5,
+     353.31
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Soft-Field Takeoff and Climb",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     341.31
+    ],
+    "QT": [
+     252.46,
+     341.31
+    ],
+    "U": [
+     262.54,
+     341.31
+    ],
+    "V": [
+     272.62,
+     341.31
+    ],
+    "NP": [
+     284.98,
+     341.31
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Soft-Field Approach and Landing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     329.31
+    ],
+    "QT": [
+     252.46,
+     329.31
+    ],
+    "U": [
+     262.54,
+     329.31
+    ],
+    "V": [
+     272.62,
+     329.31
+    ],
+    "NP": [
+     284.98,
+     329.31
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "E",
+   "name": "Short-Field Takeoff and Climb",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.09,
+     316.71
+    ],
+    "QT": [
+     252.45,
+     316.71
+    ],
+    "U": [
+     262.53,
+     316.71
+    ],
+    "V": [
+     272.38,
+     316.71
+    ],
+    "NP": [
+     284.49,
+     316.71
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.E",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "F",
+   "name": "Short-Field Approach and Landing",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     304.71
+    ],
+    "QT": [
+     252.46,
+     304.71
+    ],
+    "U": [
+     262.54,
+     304.71
+    ],
+    "V": [
+     272.38,
+     304.71
+    ],
+    "NP": [
+     284.5,
+     304.71
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.F",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "G",
+   "name": "Confined Area T/O and Climb",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     292.71
+    ],
+    "QT": [
+     252.46,
+     292.71
+    ],
+    "U": [
+     262.54,
+     292.71
+    ],
+    "V": [
+     272.38,
+     292.71
+    ],
+    "NP": [
+     284.5,
+     292.71
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.G",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "H",
+   "name": "Confined Area Approach and Land",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     280.71
+    ],
+    "QT": [
+     252.46,
+     280.71
+    ],
+    "U": [
+     262.54,
+     280.71
+    ],
+    "V": [
+     272.38,
+     280.71
+    ],
+    "NP": [
+     284.5,
+     280.71
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.H",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "I",
+   "name": "Glassy Water T/O and Climb",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     268.71
+    ],
+    "QT": [
+     252.46,
+     268.71
+    ],
+    "U": [
+     262.54,
+     268.71
+    ],
+    "V": [
+     272.62,
+     268.71
+    ],
+    "NP": [
+     284.98,
+     268.71
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.I",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "J",
+   "name": "Glassy Water Approach and Land",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     256.11
+    ],
+    "QT": [
+     252.46,
+     256.11
+    ],
+    "U": [
+     262.54,
+     256.11
+    ],
+    "V": [
+     272.62,
+     256.11
+    ],
+    "NP": [
+     284.98,
+     256.11
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.J",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "K",
+   "name": "Rough Water T/O and Climb",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     244.11
+    ],
+    "QT": [
+     252.46,
+     244.11
+    ],
+    "U": [
+     262.54,
+     244.11
+    ],
+    "V": [
+     272.62,
+     244.11
+    ],
+    "NP": [
+     284.98,
+     244.11
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.K",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "L",
+   "name": "Rough Water Approach and Land",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     231.51
+    ],
+    "QT": [
+     252.46,
+     231.51
+    ],
+    "U": [
+     262.54,
+     231.51
+    ],
+    "V": [
+     272.62,
+     231.51
+    ],
+    "NP": [
+     284.98,
+     231.51
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.L",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "M",
+   "name": "Forward Slip to a Landing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     219.51
+    ],
+    "QT": [
+     252.46,
+     219.51
+    ],
+    "U": [
+     262.54,
+     219.51
+    ],
+    "V": [
+     272.62,
+     219.51
+    ],
+    "NP": [
+     284.98,
+     219.51
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.M",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "N",
+   "name": "Go-Around/Rejected Landing",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     207.51
+    ],
+    "QT": [
+     252.46,
+     207.51
+    ],
+    "U": [
+     262.54,
+     207.51
+    ],
+    "V": [
+     272.38,
+     207.51
+    ],
+    "NP": [
+     284.5,
+     207.51
+    ]
+   },
+   "area": "IV. Takeoff, Landings, and Go-Arounds",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IV.N",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Steep Turns",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     182.91
+    ],
+    "QT": [
+     252.46,
+     182.91
+    ],
+    "U": [
+     262.54,
+     182.91
+    ],
+    "V": [
+     272.38,
+     182.91
+    ],
+    "NP": [
+     284.5,
+     182.91
+    ]
+   },
+   "area": "V. Performance & Ground Ref Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "V.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Ground Reference Maneuvers",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     182.91
+    ],
+    "QT": [
+     527.25,
+     182.91
+    ],
+    "U": [
+     537.33,
+     182.91
+    ],
+    "V": [
+     547.41,
+     182.91
+    ],
+    "NP": [
+     559.77,
+     182.91
+    ]
+   },
+   "area": "V. Performance & Ground Ref Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "V.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Pilotage and Dead Reckoning",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     607.71
+    ],
+    "QT": [
+     527.26,
+     607.71
+    ],
+    "U": [
+     537.34,
+     607.71
+    ],
+    "V": [
+     547.42,
+     607.71
+    ],
+    "NP": [
+     559.78,
+     607.71
+    ]
+   },
+   "area": "VI. Navigation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VI.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Navigation Systems and Radar Services",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     595.71
+    ],
+    "QT": [
+     527.25,
+     595.71
+    ],
+    "U": [
+     537.33,
+     595.71
+    ],
+    "V": [
+     547.41,
+     595.71
+    ],
+    "NP": [
+     559.77,
+     595.71
+    ]
+   },
+   "area": "VI. Navigation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VI.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Diversion",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     583.71
+    ],
+    "QT": [
+     527.26,
+     583.71
+    ],
+    "U": [
+     537.34,
+     583.71
+    ],
+    "V": [
+     547.42,
+     583.71
+    ],
+    "NP": [
+     559.78,
+     583.71
+    ]
+   },
+   "area": "VI. Navigation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VI.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Lost Procedures",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     571.71
+    ],
+    "QT": [
+     527.25,
+     571.71
+    ],
+    "U": [
+     537.33,
+     571.71
+    ],
+    "V": [
+     547.41,
+     571.71
+    ],
+    "NP": [
+     559.77,
+     571.71
+    ]
+   },
+   "area": "VI. Navigation",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VI.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Maneuvering During Slow Flight",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     547.11
+    ],
+    "QT": [
+     527.26,
+     547.11
+    ],
+    "U": [
+     537.34,
+     547.11
+    ],
+    "V": [
+     547.18,
+     547.11
+    ],
+    "NP": [
+     559.3,
+     547.11
+    ]
+   },
+   "area": "VII. Slow Flight and Stalls",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VII.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Power-Off Stalls",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     535.11
+    ],
+    "QT": [
+     527.25,
+     535.11
+    ],
+    "U": [
+     537.33,
+     535.11
+    ],
+    "V": [
+     547.18,
+     535.11
+    ],
+    "NP": [
+     559.29,
+     535.11
+    ]
+   },
+   "area": "VII. Slow Flight and Stalls",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VII.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Power-On Stalls",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     523.11
+    ],
+    "QT": [
+     527.26,
+     523.11
+    ],
+    "U": [
+     537.34,
+     523.11
+    ],
+    "V": [
+     547.42,
+     523.11
+    ],
+    "NP": [
+     559.78,
+     523.11
+    ]
+   },
+   "area": "VII. Slow Flight and Stalls",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VII.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Spin Awareness",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     511.11
+    ],
+    "QT": [
+     527.25,
+     511.11
+    ],
+    "U": [
+     537.33,
+     511.11
+    ],
+    "V": [
+     547.41,
+     511.11
+    ],
+    "NP": [
+     559.77,
+     511.11
+    ]
+   },
+   "area": "VII. Slow Flight and Stalls",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VII.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Straight-and-Level Flight",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     486.51
+    ],
+    "QT": [
+     527.26,
+     486.51
+    ],
+    "U": [
+     537.34,
+     486.51
+    ],
+    "V": [
+     547.18,
+     486.51
+    ],
+    "NP": [
+     559.3,
+     486.51
+    ]
+   },
+   "area": "VIII. Basic Instrument Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VIII.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Constant Airspeed Climbs",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     474.51
+    ],
+    "QT": [
+     527.26,
+     474.51
+    ],
+    "U": [
+     537.34,
+     474.51
+    ],
+    "V": [
+     547.18,
+     474.51
+    ],
+    "NP": [
+     559.3,
+     474.51
+    ]
+   },
+   "area": "VIII. Basic Instrument Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VIII.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Constant Airspeed Descents",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     462.51
+    ],
+    "QT": [
+     527.26,
+     462.51
+    ],
+    "U": [
+     537.34,
+     462.51
+    ],
+    "V": [
+     547.18,
+     462.51
+    ],
+    "NP": [
+     559.3,
+     462.51
+    ]
+   },
+   "area": "VIII. Basic Instrument Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VIII.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Turns to Headings",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     450.51
+    ],
+    "QT": [
+     527.25,
+     450.51
+    ],
+    "U": [
+     537.33,
+     450.51
+    ],
+    "V": [
+     547.18,
+     450.51
+    ],
+    "NP": [
+     559.29,
+     450.51
+    ]
+   },
+   "area": "VIII. Basic Instrument Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VIII.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "E",
+   "name": "Recovery from Unusual Flight Attitudes",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     438.51
+    ],
+    "QT": [
+     527.25,
+     438.51
+    ],
+    "U": [
+     537.33,
+     438.51
+    ],
+    "V": [
+     547.18,
+     438.51
+    ],
+    "NP": [
+     559.29,
+     438.51
+    ]
+   },
+   "area": "VIII. Basic Instrument Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VIII.E",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "F",
+   "name": "Radio Comm, Nav Sys/Fac, and Rdr Svcs",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     426.51
+    ],
+    "QT": [
+     527.25,
+     426.51
+    ],
+    "U": [
+     537.33,
+     426.51
+    ],
+    "V": [
+     547.18,
+     426.51
+    ],
+    "NP": [
+     559.29,
+     426.51
+    ]
+   },
+   "area": "VIII. Basic Instrument Maneuvers",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "VIII.F",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Emergency Descent",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     401.91
+    ],
+    "QT": [
+     527.26,
+     401.91
+    ],
+    "U": [
+     537.34,
+     401.91
+    ],
+    "V": [
+     547.42,
+     401.91
+    ],
+    "NP": [
+     559.78,
+     401.91
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Emergency Approach and Landing",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     389.91
+    ],
+    "QT": [
+     527.25,
+     389.91
+    ],
+    "U": [
+     537.33,
+     389.91
+    ],
+    "V": [
+     547.18,
+     389.91
+    ],
+    "NP": [
+     559.29,
+     389.91
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Systems and Equipment Malfunction",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     377.31
+    ],
+    "QT": [
+     527.26,
+     377.31
+    ],
+    "U": [
+     537.34,
+     377.31
+    ],
+    "V": [
+     547.42,
+     377.31
+    ],
+    "NP": [
+     559.78,
+     377.31
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Emergency Equipment and Survival Gear",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     365.31
+    ],
+    "QT": [
+     527.25,
+     365.31
+    ],
+    "U": [
+     537.33,
+     365.31
+    ],
+    "V": [
+     547.41,
+     365.31
+    ],
+    "NP": [
+     559.77,
+     365.31
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "E",
+   "name": "Engine Fail T/O before Vmc",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     353.31
+    ],
+    "QT": [
+     527.25,
+     353.31
+    ],
+    "U": [
+     537.33,
+     353.31
+    ],
+    "V": [
+     547.41,
+     353.31
+    ],
+    "NP": [
+     559.77,
+     353.31
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.E",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "F",
+   "name": "Engine Fail After Liftoff",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     341.31
+    ],
+    "QT": [
+     527.25,
+     341.31
+    ],
+    "U": [
+     537.33,
+     341.31
+    ],
+    "V": [
+     547.41,
+     341.31
+    ],
+    "NP": [
+     559.77,
+     341.31
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.F",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "G",
+   "name": "Approach/Land Inop Engine",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     329.31
+    ],
+    "QT": [
+     527.25,
+     329.31
+    ],
+    "U": [
+     537.33,
+     329.31
+    ],
+    "V": [
+     547.18,
+     329.31
+    ],
+    "NP": [
+     559.29,
+     329.31
+    ]
+   },
+   "area": "IX. Emergency Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "IX.G",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Maneuvering with One Engine Inop",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     304.71
+    ],
+    "QT": [
+     527.26,
+     304.71
+    ],
+    "U": [
+     537.34,
+     304.71
+    ],
+    "V": [
+     547.42,
+     304.71
+    ],
+    "NP": [
+     559.78,
+     304.71
+    ]
+   },
+   "area": "X. Multi-Engine Operations (AMEL only)",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "X.A",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Vmc Demonstration",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     292.71
+    ],
+    "QT": [
+     527.25,
+     292.71
+    ],
+    "U": [
+     537.33,
+     292.71
+    ],
+    "V": [
+     547.41,
+     292.71
+    ],
+    "NP": [
+     559.77,
+     292.71
+    ]
+   },
+   "area": "X. Multi-Engine Operations (AMEL only)",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "X.B",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Engine Fail During Flt (ref to instruments)",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     280.71
+    ],
+    "QT": [
+     527.26,
+     280.71
+    ],
+    "U": [
+     537.34,
+     280.71
+    ],
+    "V": [
+     547.42,
+     280.71
+    ],
+    "NP": [
+     559.78,
+     280.71
+    ]
+   },
+   "area": "X. Multi-Engine Operations (AMEL only)",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "X.C",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "Instr Apprch and Lnd with Inop Engine",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     268.71
+    ],
+    "QT": [
+     527.25,
+     268.71
+    ],
+    "U": [
+     537.33,
+     268.71
+    ],
+    "V": [
+     547.41,
+     268.71
+    ],
+    "NP": [
+     559.77,
+     268.71
+    ]
+   },
+   "area": "X. Multi-Engine Operations (AMEL only)",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "X.D",
+   "only": "AMEL"
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "Night Preparation",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     244.11
+    ],
+    "QT": [
+     527.26,
+     244.11
+    ],
+    "U": [
+     537.34,
+     244.11
+    ],
+    "V": [
+     547.42,
+     244.11
+    ],
+    "NP": [
+     559.78,
+     244.11
+    ]
+   },
+   "area": "XI. Night Operations",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "XI.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "After Landing, Parking and Securing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     219.51
+    ],
+    "QT": [
+     527.26,
+     219.51
+    ],
+    "U": [
+     537.34,
+     219.51
+    ],
+    "V": [
+     547.42,
+     219.51
+    ],
+    "NP": [
+     559.78,
+     219.51
+    ]
+   },
+   "area": "XII. Postflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "XII.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Seaplane Post-Landing Proc",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     207.51
+    ],
+    "QT": [
+     527.25,
+     207.51
+    ],
+    "U": [
+     537.33,
+     207.51
+    ],
+    "V": [
+     547.41,
+     207.51
+    ],
+    "NP": [
+     559.77,
+     207.51
+    ]
+   },
+   "area": "XII. Postflight Procedures",
+   "section": "Section 1. FAA ACS Tasks for VFR Evaluation",
+   "id": "XII.B",
+   "only": "ASES"
+  },
+  {
+   "page": 0,
+   "letter": "A",
+   "name": "CAPR 70-1 Compliance",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     143.31
+    ],
+    "QT": [
+     252.46,
+     143.31
+    ],
+    "U": [
+     262.54,
+     143.31
+    ],
+    "V": [
+     272.62,
+     143.31
+    ],
+    "NP": [
+     284.98,
+     143.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.A",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "B",
+   "name": "Risk Assessment and Release Procedures",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     131.31
+    ],
+    "QT": [
+     252.46,
+     131.31
+    ],
+    "U": [
+     262.54,
+     131.31
+    ],
+    "V": [
+     272.62,
+     131.31
+    ],
+    "NP": [
+     284.98,
+     131.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.B",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "C",
+   "name": "Electronic Flight Bag",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     119.31
+    ],
+    "QT": [
+     252.46,
+     119.31
+    ],
+    "U": [
+     262.54,
+     119.31
+    ],
+    "V": [
+     272.62,
+     119.31
+    ],
+    "NP": [
+     284.98,
+     119.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.C",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "D",
+   "name": "WMIRS Use",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     107.31
+    ],
+    "QT": [
+     252.46,
+     107.31
+    ],
+    "U": [
+     262.54,
+     107.31
+    ],
+    "V": [
+     272.62,
+     107.31
+    ],
+    "NP": [
+     284.98,
+     107.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.D",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "E",
+   "name": "Positive Exchange of Flight Controls",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     95.31
+    ],
+    "QT": [
+     252.22,
+     95.31
+    ],
+    "U": [
+     262.06,
+     95.31
+    ],
+    "V": [
+     272.14,
+     95.31
+    ],
+    "NP": [
+     284.5,
+     95.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.E",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "F",
+   "name": "Passenger and Crew Safety Briefing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     143.31
+    ],
+    "QT": [
+     527.25,
+     143.31
+    ],
+    "U": [
+     537.33,
+     143.31
+    ],
+    "V": [
+     547.41,
+     143.31
+    ],
+    "NP": [
+     559.77,
+     143.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.F",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "G",
+   "name": "Sterile Cockpit Procedures",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     131.31
+    ],
+    "QT": [
+     527.02,
+     131.31
+    ],
+    "U": [
+     536.85,
+     131.31
+    ],
+    "V": [
+     546.93,
+     131.31
+    ],
+    "NP": [
+     559.29,
+     131.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.G",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "H",
+   "name": "Aircraft Ground Handling",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     119.31
+    ],
+    "QT": [
+     527.02,
+     119.31
+    ],
+    "U": [
+     536.85,
+     119.31
+    ],
+    "V": [
+     546.93,
+     119.31
+    ],
+    "NP": [
+     559.29,
+     119.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.H",
+   "only": null
+  },
+  {
+   "page": 0,
+   "letter": "I",
+   "name": "Crew Resource Management",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     107.31
+    ],
+    "QT": [
+     527.26,
+     107.31
+    ],
+    "U": [
+     537.34,
+     107.31
+    ],
+    "V": [
+     547.42,
+     107.31
+    ],
+    "NP": [
+     559.78,
+     107.31
+    ]
+   },
+   "area": "XIII. CAP-specific Items for VFR",
+   "section": "Section 2. CAP Tasks for VFR Evaluation",
+   "id": "XIII.I",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "G1000 Electrical System",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     716.31
+    ],
+    "QT": [
+     252.46,
+     716.31
+    ],
+    "U": [
+     262.54,
+     716.31
+    ],
+    "V": [
+     272.62,
+     716.31
+    ],
+    "NP": [
+     284.98,
+     716.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "G1000 KOEL",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     704.31
+    ],
+    "QT": [
+     252.22,
+     704.31
+    ],
+    "U": [
+     262.06,
+     704.31
+    ],
+    "V": [
+     272.14,
+     704.31
+    ],
+    "NP": [
+     284.5,
+     704.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "G1000 Systems Knowledge",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     692.31
+    ],
+    "QT": [
+     252.22,
+     692.31
+    ],
+    "U": [
+     262.06,
+     692.31
+    ],
+    "V": [
+     272.14,
+     692.31
+    ],
+    "NP": [
+     284.5,
+     692.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "D",
+   "name": "PFD Features and Functions",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     680.31
+    ],
+    "QT": [
+     252.22,
+     680.31
+    ],
+    "U": [
+     262.06,
+     680.31
+    ],
+    "V": [
+     272.14,
+     680.31
+    ],
+    "NP": [
+     284.5,
+     680.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.D",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "E",
+   "name": "MFD Features and Functions",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     668.31
+    ],
+    "QT": [
+     252.22,
+     668.31
+    ],
+    "U": [
+     262.06,
+     668.31
+    ],
+    "V": [
+     272.14,
+     668.31
+    ],
+    "NP": [
+     284.5,
+     668.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.E",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "F",
+   "name": "Flight Plan Construction",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     656.31
+    ],
+    "QT": [
+     252.46,
+     656.31
+    ],
+    "U": [
+     262.54,
+     656.31
+    ],
+    "V": [
+     272.62,
+     656.31
+    ],
+    "NP": [
+     284.98,
+     656.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.F",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "G",
+   "name": "User Waypoint Construction",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     716.31
+    ],
+    "QT": [
+     527.25,
+     716.31
+    ],
+    "U": [
+     537.33,
+     716.31
+    ],
+    "V": [
+     547.41,
+     716.31
+    ],
+    "NP": [
+     559.77,
+     716.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.G",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "H",
+   "name": "PFD/MFD Failure",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     704.31
+    ],
+    "QT": [
+     527.25,
+     704.31
+    ],
+    "U": [
+     537.33,
+     704.31
+    ],
+    "V": [
+     547.41,
+     704.31
+    ],
+    "NP": [
+     559.77,
+     704.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.H",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "I",
+   "name": "AHRS/ADC Failure",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     692.31
+    ],
+    "QT": [
+     527.03,
+     692.31
+    ],
+    "U": [
+     536.86,
+     692.31
+    ],
+    "V": [
+     546.94,
+     692.31
+    ],
+    "NP": [
+     559.3,
+     692.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.I",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "J",
+   "name": "Autopilot Limitations",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     680.31
+    ],
+    "QT": [
+     527.03,
+     680.31
+    ],
+    "U": [
+     536.86,
+     680.31
+    ],
+    "V": [
+     546.94,
+     680.31
+    ],
+    "NP": [
+     559.3,
+     680.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.J",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "K",
+   "name": "Autopilot Mode Awareness",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     668.31
+    ],
+    "QT": [
+     527.25,
+     668.31
+    ],
+    "U": [
+     537.33,
+     668.31
+    ],
+    "V": [
+     547.41,
+     668.31
+    ],
+    "NP": [
+     559.77,
+     668.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.K",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "L",
+   "name": "Autopilot or Electric Trim Failure",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     656.31
+    ],
+    "QT": [
+     527.03,
+     656.31
+    ],
+    "U": [
+     536.86,
+     656.31
+    ],
+    "V": [
+     546.71,
+     656.31
+    ],
+    "NP": [
+     558.82,
+     656.31
+    ]
+   },
+   "area": "XIV. G1000 Endorsement",
+   "section": "Section 3. CAP G1000 VFR Endorsement",
+   "id": "XIV.L",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Preflight Preparation",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     616.71
+    ],
+    "QT": [
+     252.46,
+     616.71
+    ],
+    "U": [
+     262.54,
+     616.71
+    ],
+    "V": [
+     272.38,
+     616.71
+    ],
+    "NP": [
+     284.5,
+     616.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "ATC Clearance and Traffic Procedures",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     604.71
+    ],
+    "QT": [
+     252.46,
+     604.71
+    ],
+    "U": [
+     262.54,
+     604.71
+    ],
+    "V": [
+     272.38,
+     604.71
+    ],
+    "NP": [
+     284.5,
+     604.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Holding Procedures",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     592.71
+    ],
+    "QT": [
+     252.46,
+     592.71
+    ],
+    "U": [
+     262.54,
+     592.71
+    ],
+    "V": [
+     272.38,
+     592.71
+    ],
+    "NP": [
+     284.5,
+     592.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "D",
+   "name": "Intercept/Tracking Courses",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     580.71
+    ],
+    "QT": [
+     252.46,
+     580.71
+    ],
+    "U": [
+     262.54,
+     580.71
+    ],
+    "V": [
+     272.38,
+     580.71
+    ],
+    "NP": [
+     284.5,
+     580.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.D",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "E",
+   "name": "Precision Approach",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     616.71
+    ],
+    "QT": [
+     527.25,
+     616.71
+    ],
+    "U": [
+     537.33,
+     616.71
+    ],
+    "V": [
+     547.41,
+     616.71
+    ],
+    "NP": [
+     559.77,
+     616.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.E",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "F",
+   "name": "Non-Precision Approach",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     604.71
+    ],
+    "QT": [
+     527.25,
+     604.71
+    ],
+    "U": [
+     537.33,
+     604.71
+    ],
+    "V": [
+     547.41,
+     604.71
+    ],
+    "NP": [
+     559.77,
+     604.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.F",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "G",
+   "name": "Circling Approach (verbal at a minimum)",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     592.71
+    ],
+    "QT": [
+     527.26,
+     592.71
+    ],
+    "U": [
+     537.33,
+     592.71
+    ],
+    "V": [
+     547.42,
+     592.71
+    ],
+    "NP": [
+     559.78,
+     592.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.G",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "H",
+   "name": "Missed Approach",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     580.71
+    ],
+    "QT": [
+     527.25,
+     580.71
+    ],
+    "U": [
+     537.33,
+     580.71
+    ],
+    "V": [
+     547.41,
+     580.71
+    ],
+    "NP": [
+     559.77,
+     580.71
+    ]
+   },
+   "area": "XV. IFR Procedures",
+   "section": "Section 4. FAA ACS Tasks for CAP Instrument Demo Endorsement",
+   "id": "XV.H",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Autopilot Instrument Procedures",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     541.11
+    ],
+    "QT": [
+     252.22,
+     541.11
+    ],
+    "U": [
+     262.06,
+     541.11
+    ],
+    "V": [
+     272.14,
+     541.11
+    ],
+    "NP": [
+     284.5,
+     541.11
+    ]
+   },
+   "area": "XVI. CAP G1000 Instrument Tasks",
+   "section": "Section 5. CAP G1000 IFR Endorsement",
+   "id": "XVI.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "WAAS and RAIM",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     541.11
+    ],
+    "QT": [
+     527.02,
+     541.11
+    ],
+    "U": [
+     536.85,
+     541.11
+    ],
+    "V": [
+     546.93,
+     541.11
+    ],
+    "NP": [
+     559.29,
+     541.11
+    ]
+   },
+   "area": "XVI. CAP G1000 Instrument Tasks",
+   "section": "Section 5. CAP G1000 IFR Endorsement",
+   "id": "XVI.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Wind Direction and Turbulence Zones",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     501.51
+    ],
+    "QT": [
+     252.22,
+     501.51
+    ],
+    "U": [
+     262.06,
+     501.51
+    ],
+    "V": [
+     272.14,
+     501.51
+    ],
+    "NP": [
+     284.5,
+     501.51
+    ]
+   },
+   "area": "XVII. Preflight",
+   "section": "Section 6. CAP Mountain Flying Endorsement",
+   "id": "XVII.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Flight Information",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     489.51
+    ],
+    "QT": [
+     252.46,
+     489.51
+    ],
+    "U": [
+     262.54,
+     489.51
+    ],
+    "V": [
+     272.62,
+     489.51
+    ],
+    "NP": [
+     284.98,
+     489.51
+    ]
+   },
+   "area": "XVII. Preflight",
+   "section": "Section 6. CAP Mountain Flying Endorsement",
+   "id": "XVII.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Flight Limitations",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     477.51
+    ],
+    "QT": [
+     252.22,
+     477.51
+    ],
+    "U": [
+     262.06,
+     477.51
+    ],
+    "V": [
+     272.14,
+     477.51
+    ],
+    "NP": [
+     284.5,
+     477.51
+    ]
+   },
+   "area": "XVII. Preflight",
+   "section": "Section 6. CAP Mountain Flying Endorsement",
+   "id": "XVII.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Identify Approach Tactics",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     501.51
+    ],
+    "QT": [
+     527.02,
+     501.51
+    ],
+    "U": [
+     536.86,
+     501.51
+    ],
+    "V": [
+     546.94,
+     501.51
+    ],
+    "NP": [
+     559.3,
+     501.51
+    ]
+   },
+   "area": "XVIII. Inflight",
+   "section": "Section 6. CAP Mountain Flying Endorsement",
+   "id": "XVIII.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "ID Areas of Turbulence and Downdrafts",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     489.51
+    ],
+    "QT": [
+     527.02,
+     489.51
+    ],
+    "U": [
+     536.85,
+     489.51
+    ],
+    "V": [
+     546.93,
+     489.51
+    ],
+    "NP": [
+     559.29,
+     489.51
+    ]
+   },
+   "area": "XVIII. Inflight",
+   "section": "Section 6. CAP Mountain Flying Endorsement",
+   "id": "XVIII.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Canyon Flying",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     477.51
+    ],
+    "QT": [
+     527.02,
+     477.51
+    ],
+    "U": [
+     536.86,
+     477.51
+    ],
+    "V": [
+     546.94,
+     477.51
+    ],
+    "NP": [
+     559.3,
+     477.51
+    ]
+   },
+   "area": "XVIII. Inflight",
+   "section": "Section 6. CAP Mountain Flying Endorsement",
+   "id": "XVIII.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "System Knowledge",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     437.91
+    ],
+    "QT": [
+     252.46,
+     437.91
+    ],
+    "U": [
+     262.54,
+     437.91
+    ],
+    "V": [
+     272.62,
+     437.91
+    ],
+    "NP": [
+     284.98,
+     437.91
+    ]
+   },
+   "area": "XIX. Preflight",
+   "section": "Section 7. CAP Turbo Aircraft Endorsement",
+   "id": "XIX.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Safety Procedures",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     425.91
+    ],
+    "QT": [
+     252.22,
+     425.91
+    ],
+    "U": [
+     262.06,
+     425.91
+    ],
+    "V": [
+     272.14,
+     425.91
+    ],
+    "NP": [
+     284.5,
+     425.91
+    ]
+   },
+   "area": "XIX. Preflight",
+   "section": "Section 7. CAP Turbo Aircraft Endorsement",
+   "id": "XIX.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Run-up and Takeoff",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     437.91
+    ],
+    "QT": [
+     527.02,
+     437.91
+    ],
+    "U": [
+     536.86,
+     437.91
+    ],
+    "V": [
+     546.94,
+     437.91
+    ],
+    "NP": [
+     559.3,
+     437.91
+    ]
+   },
+   "area": "XX. Inflight",
+   "section": "Section 7. CAP Turbo Aircraft Endorsement",
+   "id": "XX.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Cruise",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     425.91
+    ],
+    "QT": [
+     527.02,
+     425.91
+    ],
+    "U": [
+     536.85,
+     425.91
+    ],
+    "V": [
+     546.93,
+     425.91
+    ],
+    "NP": [
+     559.29,
+     425.91
+    ]
+   },
+   "area": "XX. Inflight",
+   "section": "Section 7. CAP Turbo Aircraft Endorsement",
+   "id": "XX.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Descent and Landing",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     413.91
+    ],
+    "QT": [
+     527.02,
+     413.91
+    ],
+    "U": [
+     536.86,
+     413.91
+    ],
+    "V": [
+     546.94,
+     413.91
+    ],
+    "NP": [
+     559.3,
+     413.91
+    ]
+   },
+   "area": "XX. Inflight",
+   "section": "Section 7. CAP Turbo Aircraft Endorsement",
+   "id": "XX.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Adherence to CAPP 60-40",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     374.31
+    ],
+    "QT": [
+     252.46,
+     374.31
+    ],
+    "U": [
+     262.54,
+     374.31
+    ],
+    "V": [
+     272.62,
+     374.31
+    ],
+    "NP": [
+     284.98,
+     374.31
+    ]
+   },
+   "area": "XXI. Orientation Pilot",
+   "section": "Section 8. CAP Orientation Pilot Endorsement",
+   "id": "XXI.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Demonstrate Syllabus Maneuvers/Items",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     362.31
+    ],
+    "QT": [
+     252.46,
+     362.31
+    ],
+    "U": [
+     262.54,
+     362.31
+    ],
+    "V": [
+     272.38,
+     362.31
+    ],
+    "NP": [
+     284.5,
+     362.31
+    ]
+   },
+   "area": "XXI. Orientation Pilot",
+   "section": "Section 8. CAP Orientation Pilot Endorsement",
+   "id": "XXI.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Knowledge of AF(J)ROTC Program/Oplan",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     374.31
+    ],
+    "QT": [
+     527.26,
+     374.31
+    ],
+    "U": [
+     537.34,
+     374.31
+    ],
+    "V": [
+     547.42,
+     374.31
+    ],
+    "NP": [
+     559.78,
+     374.31
+    ]
+   },
+   "area": "XXI. Orientation Pilot",
+   "section": "Section 8. CAP Orientation Pilot Endorsement",
+   "id": "XXI.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "D",
+   "name": "Risk Management for Orientation Flights",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     362.31
+    ],
+    "QT": [
+     527.02,
+     362.31
+    ],
+    "U": [
+     536.85,
+     362.31
+    ],
+    "V": [
+     546.93,
+     362.31
+    ],
+    "NP": [
+     559.29,
+     362.31
+    ]
+   },
+   "area": "XXI. Orientation Pilot",
+   "section": "Section 8. CAP Orientation Pilot Endorsement",
+   "id": "XXI.D",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Application of FAA ACS",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     323.31
+    ],
+    "QT": [
+     252.46,
+     323.31
+    ],
+    "U": [
+     262.54,
+     323.31
+    ],
+    "V": [
+     272.62,
+     323.31
+    ],
+    "NP": [
+     284.98,
+     323.31
+    ]
+   },
+   "area": "XXII. Instructor Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXII.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Application of CAPP 72-6 Evaluation Criteria",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     311.31
+    ],
+    "QT": [
+     252.46,
+     311.31
+    ],
+    "U": [
+     262.54,
+     311.31
+    ],
+    "V": [
+     272.62,
+     311.31
+    ],
+    "NP": [
+     284.98,
+     311.31
+    ]
+   },
+   "area": "XXII. Instructor Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXII.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Brief instructional scenario",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     299.31
+    ],
+    "QT": [
+     252.46,
+     299.31
+    ],
+    "U": [
+     262.54,
+     299.31
+    ],
+    "V": [
+     272.62,
+     299.31
+    ],
+    "NP": [
+     284.98,
+     299.31
+    ]
+   },
+   "area": "XXII. Instructor Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXII.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "D",
+   "name": "Demonstrate an instructional scenario for the briefed maneuver",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     287.31
+    ],
+    "QT": [
+     252.46,
+     287.31
+    ],
+    "U": [
+     262.54,
+     287.31
+    ],
+    "V": [
+     272.38,
+     287.31
+    ],
+    "NP": [
+     284.5,
+     287.31
+    ]
+   },
+   "area": "XXII. Instructor Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXII.D",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Risk Management for Evaluations",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     323.31
+    ],
+    "QT": [
+     527.02,
+     323.31
+    ],
+    "U": [
+     536.86,
+     323.31
+    ],
+    "V": [
+     546.94,
+     323.31
+    ],
+    "NP": [
+     559.3,
+     323.31
+    ]
+   },
+   "area": "XXIII. Check Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXIII.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Evaluation Plan of Action",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     311.31
+    ],
+    "QT": [
+     527.25,
+     311.31
+    ],
+    "U": [
+     537.33,
+     311.31
+    ],
+    "V": [
+     547.41,
+     311.31
+    ],
+    "NP": [
+     559.77,
+     311.31
+    ]
+   },
+   "area": "XXIII. Check Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXIII.B",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "C",
+   "name": "Evaluate the left seat check pilot flying one inflight maneuver and one landing",
+   "flown": true,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.9,
+     299.31
+    ],
+    "QT": [
+     527.26,
+     299.31
+    ],
+    "U": [
+     537.34,
+     299.31
+    ],
+    "V": [
+     547.18,
+     299.31
+    ],
+    "NP": [
+     559.3,
+     299.31
+    ]
+   },
+   "area": "XXIII. Check Pilot Endorsement",
+   "section": "Section 9. CAP Instructor Pilot and Check Pilot Endorsements",
+   "id": "XXIII.C",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "A",
+   "name": "Teaching Flight Management Skills",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     240.1,
+     235.71
+    ],
+    "QT": [
+     252.46,
+     235.71
+    ],
+    "U": [
+     262.54,
+     235.71
+    ],
+    "V": [
+     272.62,
+     235.71
+    ],
+    "NP": [
+     284.98,
+     235.71
+    ]
+   },
+   "area": "XXIV. CAP G1000 Instructor Tasks",
+   "section": "Section 10. CAP G1000 IP Endorsement",
+   "id": "XXIV.A",
+   "only": null
+  },
+  {
+   "page": 1,
+   "letter": "B",
+   "name": "Failure Simulation",
+   "flown": false,
+   "allowed": [
+    "Q",
+    "QT",
+    "U",
+    "V",
+    "NP"
+   ],
+   "boxes": {
+    "Q": [
+     514.89,
+     235.71
+    ],
+    "QT": [
+     527.25,
+     235.71
+    ],
+    "U": [
+     537.33,
+     235.71
+    ],
+    "V": [
+     547.41,
+     235.71
+    ],
+    "NP": [
+     559.77,
+     235.71
+    ]
+   },
+   "area": "XXIV. CAP G1000 Instructor Tasks",
+   "section": "Section 10. CAP G1000 IP Endorsement",
+   "id": "XXIV.B",
+   "only": null
+  }
+ ],
+ "text": {
+  "date": {
+   "page": 0,
+   "x": 435.04,
+   "y": 739.49,
+   "w": 139
+  },
+  "memberName": {
+   "page": 0,
+   "x": 78.04,
+   "y": 720.49,
+   "w": 350
+  },
+  "capId": {
+   "page": 0,
+   "x": 462.04,
+   "y": 720.49,
+   "w": 112
+  },
+  "aircraft": {
+   "page": 0,
+   "x": 435.04,
+   "y": 696.49,
+   "w": 139
+  },
+  "airplaneClass": {
+   "page": 0,
+   "x": 435.04,
+   "y": 672.49,
+   "w": 139
+  },
+  "sortieTime": {
+   "page": 0,
+   "x": 435.04,
+   "y": 648.49,
+   "w": 139
+  },
+  "otherEndorsements": {
+   "page": 0,
+   "x": 93.04,
+   "y": 648.49,
+   "w": 336
+  },
+  "pilotSignDate": {
+   "page": 2,
+   "x": 33.04,
+   "y": 674.49,
+   "w": 46
+  },
+  "faaCert": {
+   "page": 2,
+   "x": 10.04,
+   "y": 635.49,
+   "w": 288
+  },
+  "medical": {
+   "page": 2,
+   "x": 306.04,
+   "y": 635.49,
+   "w": 268
+  },
+  "flightReview": {
+   "page": 2,
+   "x": 10.04,
+   "y": 611.49,
+   "w": 288
+  },
+  "cfiExp": {
+   "page": 2,
+   "x": 306.04,
+   "y": 611.49,
+   "w": 268
+  },
+  "qualsToRenew": {
+   "page": 2,
+   "x": 136.04,
+   "y": 519.49,
+   "w": 438
+  },
+  "qualsToRenew2": {
+   "page": 2,
+   "x": 10.04,
+   "y": 506.49,
+   "w": 564
+  },
+  "evalCapId": {
+   "page": 2,
+   "x": 50.04,
+   "y": 487.49,
+   "w": 62
+  },
+  "extCapId": {
+   "page": 2,
+   "x": 50.04,
+   "y": 424.49,
+   "w": 62
+  }
+ },
+ "signatures": {
+  "pilotSignature": {
+   "page": 2,
+   "x0": 310.04,
+   "y0": 672.49,
+   "x1": 483.04,
+   "y1": 696.99
+  },
+  "evalSignature": {
+   "page": 2,
+   "x0": 388.04,
+   "y0": 485.49,
+   "x1": 532.04,
+   "y1": 507.99
+  },
+  "extSignature": {
+   "page": 2,
+   "x0": 348.04,
+   "y0": 422.49,
+   "x1": 493.04,
+   "y1": 444.99
+  }
+ },
+ "comments": {
+  "page": 2,
+  "x0": 10.04,
+  "y0": 109.99,
+  "x1": 574.04,
+  "y1": 403.99
+ },
+ "endorsements": [
+  {
+   "key": "instrumentDemo",
+   "label": "Instrument Demo",
+   "page": 0,
+   "x": 23.64,
+   "y": 700.29
+  },
+  {
+   "key": "highPerfDemo",
+   "label": "High Performance Demo",
+   "page": 0,
+   "x": 23.64,
+   "y": 688.29
+  },
+  {
+   "key": "complexDemo",
+   "label": "Complex Demo",
+   "page": 0,
+   "x": 23.64,
+   "y": 676.29
+  },
+  {
+   "key": "turbo",
+   "label": "Turbo Aircraft",
+   "page": 0,
+   "x": 23.64,
+   "y": 664.29
+  },
+  {
+   "key": "g1000Vfr",
+   "label": "G1000 VFR",
+   "page": 0,
+   "x": 206.74,
+   "y": 700.29
+  },
+  {
+   "key": "g1000Ifr",
+   "label": "G1000 IFR",
+   "page": 0,
+   "x": 206.74,
+   "y": 688.29
+  },
+  {
+   "key": "g1000Ip",
+   "label": "G1000 IP",
+   "page": 0,
+   "x": 206.74,
+   "y": 676.29
+  },
+  {
+   "key": "mountain",
+   "label": "Mountain Flight",
+   "page": 0,
+   "x": 206.74,
+   "y": 664.29
+  },
+  {
+   "key": "orientation",
+   "label": "Orientation Pilot",
+   "page": 0,
+   "x": 318.14,
+   "y": 700.29
+  },
+  {
+   "key": "instructor",
+   "label": "Instructor Pilot",
+   "page": 0,
+   "x": 318.14,
+   "y": 688.29
+  },
+  {
+   "key": "checkPilot",
+   "label": "Check Pilot",
+   "page": 0,
+   "x": 318.14,
+   "y": 676.29
+  }
+ ]
+}

@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.DS_Store
+dist/
+# Filled evaluations and drafts contain personal data
+/CAPF70-5A_*.pdf
+/CAPF70-5A_*.json

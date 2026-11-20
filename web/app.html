@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>CAPF 70-5A Filler</title>
+<style>
+:root{
+  --bg:#f4f6f9; --panel:#fff; --ink:#18212f; --muted:#5b6678; --line:#d8dee8; --soft:#eef2f7;
+  --accent:#1f4e8c; --accent-ink:#fff; --warn:#a15c00; --warn-bg:#fff4e0; --bad:#b3261e; --bad-bg:#fdecea;
+  --q:#1e7a3e; --qt:#2a6fb0; --u:#b3261e; --v:#6b4fa3; --np:#5b6678;
+  --radius:10px; --on-grade:#fff;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0f141b; --panel:#171e28; --ink:#e6ebf2; --muted:#9aa6b8; --line:#2a3443; --soft:#1e2733;
+    --accent:#6ea2e8; --accent-ink:#0b1220; --warn:#f0b35a; --warn-bg:#2d2412; --bad:#ff8a80; --bad-bg:#3a1a18;
+    --q:#5cc489; --qt:#6ea2e8; --u:#ff8a80; --v:#b49af0; --np:#9aa6b8; --on-grade:#0b1220;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0f141b; --panel:#171e28; --ink:#e6ebf2; --muted:#9aa6b8; --line:#2a3443; --soft:#1e2733;
+  --accent:#6ea2e8; --accent-ink:#0b1220; --warn:#f0b35a; --warn-bg:#2d2412; --bad:#ff8a80; --bad-bg:#3a1a18;
+  --q:#5cc489; --qt:#6ea2e8; --u:#ff8a80; --v:#b49af0; --np:#9aa6b8; --on-grade:#0b1220;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.4 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-text-size-adjust:100%}
+header.top{position:sticky;top:0;z-index:20;background:var(--panel);border-bottom:1px solid var(--line);padding:10px 16px calc(10px) 16px;padding-top:max(10px,env(safe-area-inset-top))}
+.topin{max-width:980px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:700;font-size:17px;margin-right:auto}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+nav.tabs{max-width:980px;margin:8px auto 0;display:flex;gap:4px;overflow-x:auto}
+nav.tabs button{flex:1 0 auto;border:1px solid var(--line);background:var(--soft);color:var(--ink);padding:8px 12px;border-radius:999px;font:inherit;font-size:14px;cursor:pointer}
+nav.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+main{max-width:980px;margin:0 auto;padding:16px 16px 120px}
+section.view{display:none}
+section.view.on{display:block}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin-bottom:16px}
+.card h2{font-size:16px;margin:0 0 12px}
+.card h3{font-size:14px;margin:16px 0 8px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+label.f{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--muted)}
+label.f input,label.f select,label.f textarea{font:inherit;font-size:16px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:9px 10px;width:100%}
+textarea{min-height:120px;resize:vertical}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:8px;overflow:hidden}
+.seg label{display:flex;align-items:center;gap:6px;padding:8px 14px;cursor:pointer;font-size:15px;border-right:1px solid var(--line)}
+.seg label:last-child{border-right:0}
+.seg input{accent-color:var(--accent)}
+.endo{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.endo label{display:flex;align-items:center;gap:8px;padding:8px 10px;border:1px solid var(--line);border-radius:8px;cursor:pointer;background:var(--bg)}
+.endo input{width:20px;height:20px;accent-color:var(--accent)}
+.hint{font-size:13px;color:var(--muted);margin:6px 0 0}
+.btn{font:inherit;font-size:15px;border:1px solid var(--line);background:var(--panel);color:var(--ink);padding:9px 14px;border-radius:8px;cursor:pointer}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.btn.small{font-size:13px;padding:5px 10px}
+.btn:disabled{opacity:.5;cursor:default}
+.progress{font-size:13px;color:var(--muted);white-space:nowrap}
+
+/* task list */
+.sec{margin-bottom:16px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);overflow:hidden}
+.sec > summary{list-style:none;cursor:pointer;padding:12px 16px;display:flex;align-items:center;gap:10px;background:var(--soft);font-weight:600}
+.sec > summary::-webkit-details-marker{display:none}
+.sec > summary .chev{transition:transform .15s;color:var(--muted)}
+.sec[open] > summary .chev{transform:rotate(90deg)}
+.sec > summary .meta{margin-left:auto;font-weight:400;font-size:13px;color:var(--muted)}
+.tag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--line);color:var(--muted);white-space:nowrap}
+.area{padding:4px 16px 8px;border-top:1px solid var(--line)}
+.areahead{display:flex;align-items:center;gap:8px;padding:10px 0 4px;flex-wrap:wrap}
+.areahead b{margin-right:auto}
+.task{display:grid;grid-template-columns:1fr auto;gap:6px 12px;align-items:center;padding:8px 0;border-top:1px dashed var(--line)}
+.task:first-of-type{border-top:0}
+.task .nm{font-size:15px}
+.task .nm .id{color:var(--muted);font-variant-numeric:tabular-nums;margin-right:6px;font-size:13px}
+.task.dim .nm{color:var(--muted)}
+.grades{display:flex;gap:4px}
+.grades button{min-width:44px;height:40px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-weight:600;font-size:14px;cursor:pointer;padding:0 6px}
+.grades button.na{visibility:hidden}
+.grades button[aria-pressed="true"][data-g="Q"]{background:var(--q);border-color:var(--q);color:var(--on-grade)}
+.grades button[aria-pressed="true"][data-g="QT"]{background:var(--qt);border-color:var(--qt);color:var(--on-grade)}
+.grades button[aria-pressed="true"][data-g="U"]{background:var(--u);border-color:var(--u);color:var(--on-grade)}
+.grades button[aria-pressed="true"][data-g="V"]{background:var(--v);border-color:var(--v);color:var(--on-grade)}
+.grades button[aria-pressed="true"][data-g="NP"]{background:var(--np);border-color:var(--np);color:var(--on-grade)}
+.notebtn{border:0;background:none;color:var(--accent);font:inherit;font-size:13px;cursor:pointer;padding:0}
+.note{grid-column:1 / -1}
+.note textarea{min-height:56px;width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:8px}
+.legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted)}
+.legend b{color:var(--ink)}
+.toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}
+.toolbar label{display:flex;gap:6px;align-items:center;font-size:14px}
+
+/* signatures */
+.sig{border:1px dashed var(--line);border-radius:8px;background:#fff;position:relative;touch-action:none}
+.sig canvas{display:block;width:100%;height:120px;cursor:crosshair}
+.sigrow{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:13px;color:var(--muted)}
+
+/* review */
+.issues{list-style:none;padding:0;margin:0}
+.issues li{padding:8px 12px;border-radius:8px;margin-bottom:6px;font-size:14px}
+.issues li.warn{background:var(--warn-bg);color:var(--warn)}
+.issues li.bad{background:var(--bad-bg);color:var(--bad)}
+.issues li.ok{background:var(--soft);color:var(--muted)}
+.summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(90px,1fr));gap:8px;margin-bottom:12px}
+.summary div{background:var(--soft);border-radius:8px;padding:10px;text-align:center}
+.summary b{display:block;font-size:22px}
+.summary span{font-size:12px;color:var(--muted)}
+footer.bar{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:10px 16px;padding-bottom:max(10px,env(safe-area-inset-bottom));z-index:20}
+footer.bar .in{max-width:980px;margin:0 auto;display:flex;gap:8px;align-items:center}
+footer.bar .in .sp{margin-right:auto}
+.toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30;max-width:90vw}
+.toast.on{opacity:1}
+@media (max-width:640px){
+  .task{grid-template-columns:1fr}
+  .grades button{flex:1;min-width:0}
+  .grades{width:100%}
+  .brand small{display:none}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="topin">
+    <div class="brand">CAPF 70-5A Filler<small>CAP Pilot Flight Evaluation – Airplane · form edition 8 JUN 20</small></div>
+    <span class="progress" id="progress"></span>
+  </div>
+  <nav class="tabs" role="tablist">
+    <button role="tab" data-view="info" aria-selected="true">1 · Evaluation</button>
+    <button role="tab" data-view="tasks">2 · Tasks</button>
+    <button role="tab" data-view="cert">3 · Certification</button>
+    <button role="tab" data-view="review">4 · Review &amp; PDF</button>
+  </nav>
+</header>
+
+<main>
+<div id="fatal" class="card" style="display:none;border-color:var(--bad);background:var(--bad-bg);color:var(--bad)"></div>
+<!-- 1. Evaluation info -->
+<section class="view on" id="view-info">
+  <div class="card">
+    <h2>Evaluation</h2>
+    <div class="seg" style="margin-bottom:12px">
+      <label><input type="radio" name="checkType" value="annual" data-k="checkType"> Annual</label>
+      <label><input type="radio" name="checkType" value="abbreviated" data-k="checkType"> Abbreviated</label>
+    </div>
+    <div class="grid">
+      <label class="f">Date of evaluation<input type="date" data-k="date"></label>
+      <label class="f">Member's name<input type="text" data-k="memberName" autocomplete="off" placeholder="Last, First M."></label>
+      <label class="f">CAP ID<input type="text" data-k="capId" inputmode="numeric" autocomplete="off"></label>
+      <label class="f">Aircraft make and model<input type="text" data-k="aircraft" placeholder="e.g. Cessna 182T" list="aclist"></label>
+      <label class="f">Airplane class
+        <select data-k="airplaneClass">
+          <option value="ASEL">ASEL – single-engine land</option>
+          <option value="AMEL">AMEL – multi-engine land</option>
+          <option value="ASES">ASES – single-engine sea</option>
+          <option value="AMES">AMES – multi-engine sea</option>
+        </select>
+      </label>
+      <label class="f">Sortie flight time<input type="text" data-k="sortieTime" inputmode="decimal" placeholder="e.g. 1.3"></label>
+    </div>
+    <datalist id="aclist"><option>Cessna 172</option><option>Cessna 172 G1000</option><option>Cessna 182</option><option>Cessna 182T G1000</option><option>Cessna 206</option><option>GippsAero GA8</option></datalist>
+  </div>
+
+  <div class="card">
+    <h2>Ops quals endorsements evaluated</h2>
+    <p class="hint" style="margin:0 0 10px">Check each endorsement being evaluated. Its task section opens on the Tasks tab, and your initials print in its box on the form. Leave a box unchecked to leave it blank.</p>
+    <div class="endo" id="endoList"></div>
+    <div class="grid" style="margin-top:12px">
+      <label class="f">Evaluator's initials<input type="text" data-k="evalInitials" maxlength="4" autocapitalize="characters" placeholder="e.g. JQP"></label>
+      <label class="f">Other endorsements<input type="text" data-k="otherEndorsements"></label>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Tasks -->
+<section class="view" id="view-tasks">
+  <div class="card">
+    <div class="legend" id="legend">
+      <span><b>Q</b> Qualified</span><span><b>QT</b> Qualified, training required</span><span><b>U</b> Unqualified</span><span><b>V</b> Verbal</span><span><b>NP</b> Not performed</span>
+    </div>
+    <p class="hint">Only the grades the form allows for each task are shown (the form prints a dash in the others). Tap a selected grade again to clear it.</p>
+  </div>
+  <div class="toolbar">
+    <label><input type="checkbox" id="showAll"> Show sections for endorsements not being evaluated</label>
+  </div>
+  <div id="taskList"></div>
+</section>
+
+<!-- 3. Certification -->
+<section class="view" id="view-cert">
+  <div class="card">
+    <h2>Review of certificates and documents</h2>
+    <div class="grid">
+      <label class="f">FAA pilot cert no.<input type="text" data-k="faaCert" autocomplete="off"></label>
+      <label class="f">Medical class and issue date<input type="text" data-k="medical" placeholder="e.g. 3rd / 12 Mar 2025 or BasicMed"></label>
+      <label class="f">Flight review date<input type="text" data-k="flightReview" placeholder="e.g. 4 Jun 2025"></label>
+      <label class="f">CFI cert expiration date<input type="text" data-k="cfiExp" placeholder="if applicable"></label>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Certification by evaluated pilot</h2>
+    <div class="grid">
+      <label class="f">Date signed<input type="date" data-k="pilotSignDate"></label>
+    </div>
+    <h3>Pilot's signature</h3>
+    <div class="sig" data-sig="pilotSignature"><canvas></canvas></div>
+    <div class="sigrow"><span>Sign with finger or stylus. Leave blank to sign on paper later.</span><button class="btn small" data-clear="pilotSignature">Clear</button></div>
+  </div>
+
+  <div class="card">
+    <h2>Certification of evaluator</h2>
+    <div class="grid">
+      <label class="f">Aircraft qualifications to renew<input type="text" data-k="qualsToRenew" placeholder="e.g. C172, C182"></label>
+      <label class="f">Evaluator CAP ID#<input type="text" data-k="evalCapId" inputmode="numeric"></label>
+    </div>
+    <h3>CAP CP / evaluator's signature</h3>
+    <div class="sig" data-sig="evalSignature"><canvas></canvas></div>
+    <div class="sigrow"><span>Leave blank to sign later.</span><button class="btn small" data-clear="evalSignature">Clear</button></div>
+  </div>
+
+  <details class="card">
+    <summary style="cursor:pointer;font-weight:600">Certification of external evaluation (non-CAP flight evaluation only)</summary>
+    <div class="grid" style="margin-top:12px">
+      <label class="f">CAP check pilot CAP ID#<input type="text" data-k="extCapId" inputmode="numeric"></label>
+    </div>
+    <h3>CAP CP's signature</h3>
+    <div class="sig" data-sig="extSignature"><canvas></canvas></div>
+    <div class="sigrow"><span></span><button class="btn small" data-clear="extSignature">Clear</button></div>
+  </details>
+
+  <div class="card">
+    <h2>Comments</h2>
+    <label class="f">General comments<textarea data-k="comments" placeholder="Debrief, restrictions, training requirements…"></textarea></label>
+    <label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:14px"><input type="checkbox" data-k="includeNotes"> Append task notes (e.g. reasons for QT / U) to the comments</label>
+    <p class="hint" id="commentFit"></p>
+  </div>
+</section>
+
+<!-- 4. Review -->
+<section class="view" id="view-review">
+  <div class="card">
+    <h2>Summary</h2>
+    <div class="summary" id="summary"></div>
+    <ul class="issues" id="issues"></ul>
+  </div>
+  <div class="card">
+    <h2>Generate</h2>
+    <p class="hint" style="margin:0 0 12px">Fills the official CAPF 70-5A (8 JUN 20) and downloads it. Nothing leaves this device.</p>
+    <div class="toolbar">
+      <button class="btn primary" id="genBtn">Download filled PDF</button>
+      <button class="btn" id="exportBtn">Save draft file</button>
+      <label class="btn" style="cursor:pointer">Open draft file<input type="file" id="importFile" accept=".json,application/json" hidden></label>
+      <button class="btn" id="newBtn">Start new evaluation</button>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="bar"><div class="in">
+  <span class="sp progress" id="saved"></span>
+  <button class="btn" id="prevBtn">Back</button>
+  <button class="btn primary" id="nextBtn">Next</button>
+</div></footer>
+<div class="toast" id="toast"></div>
+
+<script>
+// Surface any script failure on screen instead of leaving dead buttons.
+function showFatal(html) {
+  var el = document.getElementById("fatal");
+  el.innerHTML = html; el.style.display = "block";
+}
+window.addEventListener("error", function (e) {
+  if (/unbuilt source/.test(e.message)) return;
+  showFatal("<b>Something went wrong loading the app.</b><br>" + String(e.message).replace(/</g, "&lt;") +
+    "<br>Try the latest Safari, Chrome or Edge, and please report this message.");
+});
+</script>
+<script>/*__PDFLIB__*/</script>
+<script>
+const LAYOUT = /*__LAYOUT__*/null;
+const PDF_B64 = "__PDF_B64__";
+</script>
+<script>
+"use strict";
+if (!LAYOUT || typeof PDFLib === "undefined") {
+  showFatal("<b>This is the unbuilt source file, so it can't run.</b><br>Open <code>docs/index.html</code> instead " +
+    "(or run <code>python3 tools/build.py</code> to rebuild it).");
+  throw new Error("unbuilt source");
+}
+const GRADES = LAYOUT.grades;
+const STORE_KEY = "capf705a-draft-v1";
+const VIEWS = ["info", "tasks", "cert", "review"];
+
+// Which endorsement opens which task section. Sections 1-2 are always graded.
+const ENDO_SECTION = {
+  g1000Vfr: "Section 3.", instrumentDemo: "Section 4.", g1000Ifr: "Section 5.",
+  mountain: "Section 6.", turbo: "Section 7.", orientation: "Section 8.",
+  instructor: "Section 9.", checkPilot: "Section 9.", g1000Ip: "Section 10.",
+};
+
+const $ = (s, r = document) => r.querySelector(s);
+const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+
+function blank() {
+  return {
+    checkType: "annual", date: today(), memberName: "", capId: "", aircraft: "",
+    airplaneClass: "ASEL", sortieTime: "", evalInitials: "", otherEndorsements: "",
+    endorsements: {}, grades: {}, notes: {},
+    faaCert: "", medical: "", flightReview: "", cfiExp: "",
+    pilotSignDate: today(), qualsToRenew: "", evalCapId: "", extCapId: "",
+    comments: "", includeNotes: true, signatures: {},
+  };
+}
+function today() {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+function fmtDate(iso) {
+  if (!iso) return "";
+  const [y, m, d] = iso.split("-").map(Number);
+  const mon = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"][m - 1];
+  return `${d} ${mon} ${y}`;
+}
+
+let S = load();
+function load() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) return Object.assign(blank(), JSON.parse(raw));
+  } catch (e) {}
+  return blank();
+}
+let saveTimer;
+function save() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(() => {
+    try {
+      localStorage.setItem(STORE_KEY, JSON.stringify(S));
+      $("#saved").textContent = "Draft saved on this device";
+    } catch (e) {
+      $("#saved").textContent = "Couldn't autosave — use Save draft file";
+    }
+  }, 300);
+  refreshCounts();
+}
+
+function toast(msg) {
+  const t = $("#toast");
+  t.textContent = msg; t.classList.add("on");
+  clearTimeout(toast.t); toast.t = setTimeout(() => t.classList.remove("on"), 2600);
+}
+
+/* ---------- tabs ---------- */
+let view = "info";
+function show(v) {
+  view = v;
+  $$("nav.tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === v));
+  $$("section.view").forEach(s => s.classList.toggle("on", s.id === "view-" + v));
+  $("#prevBtn").disabled = v === VIEWS[0];
+  $("#nextBtn").textContent = v === "review" ? "Download PDF" : "Next";
+  if (v === "review") renderReview();
+  if (v === "cert") { sizeSigs(); fitComments(); }
+  if (v === "tasks") renderTasks();
+  window.scrollTo(0, 0);
+}
+$$("nav.tabs button").forEach(b => b.onclick = () => show(b.dataset.view));
+$("#prevBtn").onclick = () => show(VIEWS[Math.max(0, VIEWS.indexOf(view) - 1)]);
+$("#nextBtn").onclick = () => view === "review" ? generate() : show(VIEWS[VIEWS.indexOf(view) + 1]);
+
+/* ---------- simple bound fields ---------- */
+function bindFields() {
+  $$("[data-k]").forEach(el => {
+    const k = el.dataset.k;
+    if (el.type === "radio") el.checked = S[k] === el.value;
+    else if (el.type === "checkbox") el.checked = !!S[k];
+    else el.value = S[k] ?? "";
+    el.oninput = el.onchange = () => {
+      if (el.type === "radio") { if (el.checked) S[k] = el.value; }
+      else if (el.type === "checkbox") S[k] = el.checked;
+      else S[k] = el.value;
+      if (k === "comments" || k === "includeNotes") fitComments();
+      save();
+    };
+  });
+}
+
+/* ---------- endorsements ---------- */
+function renderEndo() {
+  const box = $("#endoList");
+  box.innerHTML = "";
+  for (const e of LAYOUT.endorsements) {
+    const l = document.createElement("label");
+    l.innerHTML = `<input type="checkbox"> <span>${e.label}</span>`;
+    const cb = l.querySelector("input");
+    cb.checked = !!S.endorsements[e.key];
+    cb.onchange = () => { S.endorsements[e.key] = cb.checked; save(); };
+    box.appendChild(l);
+  }
+}
+
+/* ---------- tasks ---------- */
+function sectionActive(sec) {
+  if (/^Section [12]\./.test(sec)) return true;
+  return Object.entries(ENDO_SECTION).some(([k, s]) => S.endorsements[k] && sec.startsWith(s));
+}
+function classApplies(t) {
+  if (!t.only) return true;
+  const c = S.airplaneClass;
+  if (t.only === "ASES") return c === "ASES" || c === "AMES";
+  if (t.only === "AMEL") return c === "AMEL" || c === "AMES";
+  return true;
+}
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function renderTasks() {
+  const list = $("#taskList");
+  const openState = {};
+  $$("details.sec", list).forEach(d => openState[d.dataset.sec] = d.open);
+  list.innerHTML = "";
+  const showAll = $("#showAll").checked;
+  const bySec = new Map();
+  for (const t of LAYOUT.tasks) {
+    if (!bySec.has(t.section)) bySec.set(t.section, new Map());
+    const areas = bySec.get(t.section);
+    if (!areas.has(t.area)) areas.set(t.area, []);
+    areas.get(t.area).push(t);
+  }
+  for (const [sec, areas] of bySec) {
+    const active = sectionActive(sec);
+    const all = [...areas.values()].flat();
+    const graded = all.filter(t => S.grades[t.id]).length;
+    if (!active && !showAll && !graded) continue;
+    const d = document.createElement("details");
+    d.className = "sec"; d.dataset.sec = sec;
+    d.open = sec in openState ? openState[sec] : active;
+    d.innerHTML = `<summary><span class="chev">▸</span><span>${esc(sec)}</span>${active ? "" : '<span class="tag">not selected</span>'}<span class="meta">${graded}/${all.length}</span></summary>`;
+    for (const [area, tasks] of areas) {
+      const a = document.createElement("div");
+      a.className = "area";
+      a.innerHTML = `<div class="areahead"><b>${esc(area)}</b>
+        <button class="btn small" data-fill="Q">Ungraded → Q</button>
+        <button class="btn small" data-fill="NP">Ungraded → NP</button></div>`;
+      $$("[data-fill]", a).forEach(b => b.onclick = () => {
+        let n = 0;
+        for (const t of tasks) if (!S.grades[t.id] && classApplies(t) && t.allowed.includes(b.dataset.fill)) { S.grades[t.id] = b.dataset.fill; n++; }
+        save(); renderTasks();
+        toast(n ? `Marked ${n} task${n > 1 ? "s" : ""} ${b.dataset.fill}` : "Nothing ungraded here");
+      });
+      for (const t of tasks) a.appendChild(taskRow(t));
+      d.appendChild(a);
+    }
+    d.addEventListener("toggle", () => {});
+    list.appendChild(d);
+  }
+}
+
+function taskRow(t) {
+  const row = document.createElement("div");
+  const applies = classApplies(t);
+  row.className = "task" + (applies ? "" : " dim");
+  const only = t.only ? ` <span class="tag">${t.only} only</span>` : "";
+  row.innerHTML = `<div class="nm"><span class="id">${t.id}</span>${esc(t.name)}${only}
+      <div><button class="notebtn">${S.notes[t.id] ? "Edit note" : "+ Note"}</button></div></div>
+    <div class="grades">${GRADES.map(g => `<button data-g="${g}" class="${t.allowed.includes(g) ? "" : "na"}" aria-pressed="${S.grades[t.id] === g}" ${t.allowed.includes(g) ? "" : 'tabindex="-1" aria-hidden="true"'}>${g}</button>`).join("")}</div>`;
+  $$(".grades button", row).forEach(b => b.onclick = () => {
+    if (b.classList.contains("na")) return;
+    const g = b.dataset.g;
+    if (S.grades[t.id] === g) delete S.grades[t.id]; else S.grades[t.id] = g;
+    $$(".grades button", row).forEach(x => x.setAttribute("aria-pressed", S.grades[t.id] === x.dataset.g));
+    if ((g === "U" || g === "QT") && S.grades[t.id] === g && !S.notes[t.id]) openNote();
+    save();
+    const sec = row.closest("details.sec");
+    const all = LAYOUT.tasks.filter(x => x.section === sec.dataset.sec);
+    $(".meta", sec).textContent = `${all.filter(x => S.grades[x.id]).length}/${all.length}`;
+  });
+  const nb = $(".notebtn", row);
+  function openNote() {
+    if ($(".note", row)) { $(".note textarea", row).focus(); return; }
+    const n = document.createElement("div");
+    n.className = "note";
+    n.innerHTML = `<textarea placeholder="Note for ${t.id} (printed in Comments)"></textarea>`;
+    const ta = $("textarea", n);
+    ta.value = S.notes[t.id] || "";
+    ta.oninput = () => { if (ta.value.trim()) S.notes[t.id] = ta.value; else delete S.notes[t.id]; nb.textContent = S.notes[t.id] ? "Edit note" : "+ Note"; save(); };
+    row.appendChild(n); ta.focus();
+  }
+  nb.onclick = openNote;
+  if (S.notes[t.id]) {
+    nb.onclick(); // show existing notes inline
+    $(".note textarea", row).blur();
+  }
+  return row;
+}
+$("#showAll").onchange = renderTasks;
+
+/* ---------- signatures ---------- */
+const pads = {};
+function setupSig(el) {
+  const key = el.dataset.sig, cv = $("canvas", el), ctx = cv.getContext("2d");
+  let drawing = false, last = null, dirty = false;
+  pads[key] = { cv, size, restore };
+  function size() {
+    const r = cv.getBoundingClientRect();
+    if (!r.width) return;
+    const dpr = window.devicePixelRatio || 1;
+    cv.width = Math.round(r.width * dpr); cv.height = Math.round(r.height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.lineCap = ctx.lineJoin = "round"; ctx.lineWidth = 2.2; ctx.strokeStyle = "#0b2a6b";
+    restore();
+  }
+  function restore() {
+    const src = S.signatures[key];
+    if (!src) return;
+    const img = new Image();
+    img.onload = () => { const r = cv.getBoundingClientRect(); ctx.drawImage(img, 0, 0, r.width, r.height); };
+    img.src = src;
+  }
+  const pos = e => { const r = cv.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  cv.addEventListener("pointerdown", e => { drawing = true; last = pos(e); cv.setPointerCapture(e.pointerId); e.preventDefault(); });
+  cv.addEventListener("pointermove", e => {
+    if (!drawing) return;
+    const p = pos(e);
+    ctx.beginPath(); ctx.moveTo(...last); ctx.lineTo(...p); ctx.stroke();
+    last = p; dirty = true;
+  });
+  const end = () => {
+    if (!drawing) return;
+    drawing = false;
+    if (dirty) { S.signatures[key] = cv.toDataURL("image/png"); save(); dirty = false; }
+  };
+  cv.addEventListener("pointerup", end); cv.addEventListener("pointercancel", end);
+  $(`[data-clear="${key}"]`).onclick = () => { delete S.signatures[key]; ctx.clearRect(0, 0, cv.width, cv.height); save(); };
+}
+function sizeSigs() { Object.values(pads).forEach(p => p.size()); }
+$$(".sig").forEach(setupSig);
+$$("details.card").forEach(d => d.addEventListener("toggle", sizeSigs));
+window.addEventListener("resize", () => { if (view === "cert") sizeSigs(); });
+
+/* ---------- comments composition ---------- */
+function commentText() {
+  const parts = [];
+  if (S.comments.trim()) parts.push(S.comments.trim());
+  if (S.includeNotes) {
+    const notes = LAYOUT.tasks.filter(t => S.notes[t.id]?.trim())
+      .map(t => `${t.id} ${t.name}${S.grades[t.id] ? ` (${S.grades[t.id]})` : ""}: ${S.notes[t.id].trim()}`);
+    if (notes.length) parts.push(notes.join("\n"));
+  }
+  return parts.join("\n\n");
+}
+
+/* ---------- PDF text helpers (shared by preview-fit and generate) ---------- */
+function clean(s) {
+  return String(s ?? "")
+    .replace(/[‘’]/g, "'").replace(/[“”]/g, '"')
+    .replace(/[–—]/g, "-").replace(/…/g, "...")
+    .replace(/[^\n\x20-\x7E\xA0-\xFF]/g, "");
+}
+function wrap(font, text, size, width) {
+  const out = [];
+  for (const para of clean(text).split("\n")) {
+    if (!para.trim()) { out.push(""); continue; }
+    let line = "";
+    for (const word of para.split(/\s+/)) {
+      const cand = line ? line + " " + word : word;
+      if (font.widthOfTextAtSize(cand, size) <= width) { line = cand; continue; }
+      if (line) out.push(line);
+      // hard-break words longer than the line
+      let w = word;
+      while (font.widthOfTextAtSize(w, size) > width) {
+        let i = w.length; while (i > 1 && font.widthOfTextAtSize(w.slice(0, i), size) > width) i--;
+        out.push(w.slice(0, i)); w = w.slice(i);
+      }
+      line = w;
+    }
+    out.push(line);
+  }
+  return out;
+}
+function layoutComments(font, text) {
+  const c = LAYOUT.comments, width = c.x1 - c.x0, height = c.y1 - c.y0;
+  for (let size = 10; size >= 6.5; size -= 0.5) {
+    const lines = wrap(font, text, size, width), lh = size * 1.22;
+    if (lines.length * lh <= height) return { size, lh, lines, overflow: 0 };
+  }
+  const size = 6.5, lh = size * 1.22, lines = wrap(font, text, size, width);
+  const max = Math.floor(height / lh);
+  return { size, lh, lines: lines.slice(0, max), overflow: lines.length - max };
+}
+let helv = null;
+async function getFonts(doc) {
+  return {
+    reg: await doc.embedFont(PDFLib.StandardFonts.Helvetica),
+    bold: await doc.embedFont(PDFLib.StandardFonts.HelveticaBold),
+  };
+}
+async function fitComments() {
+  if (!helv) { const d = await PDFLib.PDFDocument.create(); helv = await d.embedFont(PDFLib.StandardFonts.Helvetica); }
+  const r = layoutComments(helv, commentText());
+  const el = $("#commentFit");
+  if (r.overflow > 0) { el.textContent = `Too long for the Comments box: ${r.overflow} line(s) won't fit. Shorten it or continue on a separate page.`; el.style.color = "var(--bad)"; }
+  else { el.textContent = r.lines.length ? `Fits on the form at ${r.size}pt.` : ""; el.style.color = ""; }
+  return r;
+}
+
+/* ---------- review ---------- */
+function refreshCounts() {
+  const graded = Object.keys(S.grades).length;
+  $("#progress").textContent = `${graded} task${graded === 1 ? "" : "s"} graded`;
+}
+function renderReview() {
+  const counts = Object.fromEntries(GRADES.map(g => [g, 0]));
+  Object.values(S.grades).forEach(g => counts[g]++);
+  $("#summary").innerHTML = GRADES.map(g => `<div><b style="color:var(--${g.toLowerCase()})">${counts[g]}</b><span>${g}</span></div>`).join("");
+  const issues = [];
+  const req = [["memberName", "Member's name"], ["capId", "CAP ID"], ["date", "Date of evaluation"], ["aircraft", "Aircraft make and model"], ["sortieTime", "Sortie flight time"]];
+  for (const [k, l] of req) if (!String(S[k]).trim()) issues.push(["warn", `${l} is blank.`]);
+  const anyEndo = Object.values(S.endorsements).some(Boolean);
+  if (anyEndo && !S.evalInitials.trim()) issues.push(["warn", "Endorsements are checked but the evaluator's initials are blank, so the endorsement boxes will print empty."]);
+  for (const t of LAYOUT.tasks) {
+    if (sectionActive(t.section) && classApplies(t) && !S.grades[t.id]) issues.push(["warn", `${t.id} ${t.name} is ungraded.`]);
+  }
+  for (const t of LAYOUT.tasks) {
+    const g = S.grades[t.id];
+    if (g === "U") issues.push(["bad", `${t.id} ${t.name} graded U.${S.notes[t.id] ? "" : " No note entered."}`]);
+    if (g === "QT" && !S.notes[t.id]) issues.push(["warn", `${t.id} ${t.name} graded QT with no note on the training required.`]);
+    if (g && !t.allowed.includes(g)) issues.push(["bad", `${t.id} has a grade the form doesn't allow (${g}).`]);
+  }
+  if (!S.signatures.evalSignature) issues.push(["ok", "No evaluator signature drawn; the signature line will be left blank to sign by hand."]);
+  if (!S.signatures.pilotSignature) issues.push(["ok", "No pilot signature drawn; the signature line will be left blank to sign by hand."]);
+  fitComments().then(r => {
+    if (r.overflow > 0) {
+      const li = document.createElement("li"); li.className = "bad";
+      li.textContent = `Comments are too long: ${r.overflow} line(s) will be cut off.`;
+      $("#issues").prepend(li);
+    }
+  });
+  $("#issues").innerHTML = issues.length
+    ? issues.map(([c, m]) => `<li class="${c}">${esc(m)}</li>`).join("")
+    : `<li class="ok">Everything looks complete.</li>`;
+}
+
+/* ---------- PDF generation ---------- */
+function b64ToBytes(b64) {
+  const bin = atob(b64), out = new Uint8Array(bin.length);
+  for (let i = 0; i < bin.length; i++) out[i] = bin.charCodeAt(i);
+  return out;
+}
+async function buildPdf() {
+  const { PDFDocument, rgb } = PDFLib;
+  const doc = await PDFDocument.load(b64ToBytes(PDF_B64));
+  const pages = doc.getPages();
+  const { reg } = await getFonts(doc);
+  const ink = rgb(0.03, 0.12, 0.42);
+
+  const X = (page, x, y, s = 2.5) => {
+    page.drawLine({ start: { x: x - s, y: y - s }, end: { x: x + s, y: y + s }, thickness: 1, color: ink });
+    page.drawLine({ start: { x: x - s, y: y + s }, end: { x: x + s, y: y - s }, thickness: 1, color: ink });
+  };
+  const text = (key, value) => {
+    const f = LAYOUT.text[key], v = clean(value).replace(/\n/g, " ").trim();
+    if (!f || !v) return;
+    let size = 10;
+    while (size > 6 && reg.widthOfTextAtSize(v, size) > f.w) size -= 0.5;
+    let out = v;
+    while (out.length && reg.widthOfTextAtSize(out, size) > f.w) out = out.slice(0, -1);
+    pages[f.page].drawText(out, { x: f.x, y: f.y, size, font: reg, color: ink });
+  };
+
+  // Header
+  const ct = LAYOUT.checktype[S.checkType];
+  if (ct) X(pages[0], ct[0], ct[1]);
+  text("date", fmtDate(S.date));
+  text("memberName", S.memberName);
+  text("capId", S.capId);
+  text("aircraft", S.aircraft);
+  text("airplaneClass", S.airplaneClass);
+  text("sortieTime", S.sortieTime);
+  text("otherEndorsements", S.otherEndorsements);
+  const ini = clean(S.evalInitials).trim().toUpperCase();
+  if (ini) for (const e of LAYOUT.endorsements) {
+    if (!S.endorsements[e.key]) continue;
+    const size = 9, w = reg.widthOfTextAtSize(ini, size);
+    pages[e.page].drawText(ini, { x: e.x - w / 2, y: e.y - 3.2, size, font: reg, color: ink });
+  }
+
+  // Grades
+  for (const t of LAYOUT.tasks) {
+    const g = S.grades[t.id];
+    if (!g || !t.allowed.includes(g)) continue;
+    const [x, y] = t.boxes[g];
+    X(pages[t.page], x, y);
+  }
+
+  // Page 3
+  text("pilotSignDate", S.pilotSignDate ? fmtDate(S.pilotSignDate) : "");
+  text("faaCert", S.faaCert);
+  text("medical", S.medical);
+  text("flightReview", S.flightReview);
+  text("cfiExp", S.cfiExp);
+  {
+    const q = clean(S.qualsToRenew).trim();
+    if (q) {
+      const f1 = LAYOUT.text.qualsToRenew, f2 = LAYOUT.text.qualsToRenew2;
+      const words = q.split(/\s+/); let l1 = "";
+      while (words.length && reg.widthOfTextAtSize((l1 ? l1 + " " : "") + words[0], 10) <= f1.w) l1 += (l1 ? " " : "") + words.shift();
+      text("qualsToRenew", l1); text("qualsToRenew2", words.join(" "));
+    }
+  }
+  text("evalCapId", S.evalCapId);
+  text("extCapId", S.extCapId);
+
+  for (const [key, box] of Object.entries(LAYOUT.signatures)) {
+    const src = S.signatures[key];
+    if (!src) continue;
+    const img = await doc.embedPng(await trimSig(src));
+    const bw = box.x1 - box.x0, bh = box.y1 - box.y0;
+    const sc = Math.min(bw / img.width, bh / img.height);
+    pages[box.page].drawImage(img, { x: box.x0, y: box.y0, width: img.width * sc, height: img.height * sc });
+  }
+
+  const c = layoutComments(reg, commentText());
+  let y = LAYOUT.comments.y1 - c.size;
+  for (const line of c.lines) {
+    if (line) pages[LAYOUT.comments.page].drawText(line, { x: LAYOUT.comments.x0, y, size: c.size, font: reg, color: ink });
+    y -= c.lh;
+  }
+
+  doc.setTitle(`CAPF 70-5A - ${clean(S.memberName) || "Pilot Flight Evaluation"}`);
+  doc.setSubject("CAP Pilot Flight Evaluation - Airplane");
+  return doc.save();
+}
+// Crop transparent margins off a drawn signature so it scales up to fill its box.
+function trimSig(dataUrl) {
+  return new Promise(res => {
+    const img = new Image();
+    img.onload = () => {
+      const c = document.createElement("canvas"); c.width = img.width; c.height = img.height;
+      const x = c.getContext("2d"); x.drawImage(img, 0, 0);
+      const d = x.getImageData(0, 0, c.width, c.height).data;
+      let x0 = c.width, y0 = c.height, x1 = -1, y1 = -1;
+      for (let yy = 0; yy < c.height; yy++) for (let xx = 0; xx < c.width; xx++) {
+        if (d[(yy * c.width + xx) * 4 + 3] > 10) { if (xx < x0) x0 = xx; if (xx > x1) x1 = xx; if (yy < y0) y0 = yy; if (yy > y1) y1 = yy; }
+      }
+      if (x1 < 0) { res(b64ToBytes(dataUrl.split(",")[1])); return; }
+      const p = 4, o = document.createElement("canvas");
+      o.width = x1 - x0 + 1 + 2 * p; o.height = y1 - y0 + 1 + 2 * p;
+      o.getContext("2d").drawImage(c, x0 - p, y0 - p, o.width, o.height, 0, 0, o.width, o.height);
+      res(b64ToBytes(o.toDataURL("image/png").split(",")[1]));
+    };
+    img.src = dataUrl;
+  });
+}
+function fileBase() {
+  const n = clean(S.memberName).replace(/[^A-Za-z0-9]+/g, "_").replace(/^_|_$/g, "") || "pilot";
+  return `CAPF70-5A_${n}_${S.date || today()}`;
+}
+function download(bytes, name, type) {
+  const blob = new Blob([bytes], { type });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob); a.download = name;
+  document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(() => URL.revokeObjectURL(a.href), 10000);
+}
+async function generate() {
+  const btn = $("#genBtn"); btn.disabled = true; btn.textContent = "Building…";
+  try {
+    const bytes = await buildPdf();
+    download(bytes, fileBase() + ".pdf", "application/pdf");
+    toast("PDF downloaded");
+  } catch (e) {
+    console.error(e); toast("Couldn't build the PDF: " + e.message);
+  } finally { btn.disabled = false; btn.textContent = "Download filled PDF"; }
+}
+$("#genBtn").onclick = generate;
+$("#exportBtn").onclick = () => download(JSON.stringify(S, null, 1), fileBase() + ".json", "application/json");
+$("#importFile").onchange = async e => {
+  const f = e.target.files[0]; if (!f) return;
+  try { S = Object.assign(blank(), JSON.parse(await f.text())); init(); save(); toast("Draft opened"); show("info"); }
+  catch (err) { toast("That file isn't a draft from this tool"); }
+  e.target.value = "";
+};
+$("#newBtn").onclick = () => {
+  if (!confirm("Clear this evaluation and start a new one? Save a draft file first if you need to keep it.")) return;
+  const keep = { evalInitials: S.evalInitials, evalCapId: S.evalCapId };
+  S = Object.assign(blank(), keep); init(); save(); show("info"); toast("New evaluation started");
+};
+
+function init() {
+  bindFields(); renderEndo(); renderTasks(); refreshCounts();
+  Object.values(pads).forEach(p => { const ctx = p.cv.getContext("2d"); ctx.clearRect(0, 0, p.cv.width, p.cv.height); });
+  sizeSigs();
+}
+init();
+show("info");
+// Expose for automated testing.
+window.__capf = { buildPdf, get state() { return S; }, set state(v) { S = v; init(); } };
+</script>
+</body>
+</html>
