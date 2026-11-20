@@ -268,10 +268,20 @@ function showFatal(html) {
   var el = document.getElementById("fatal");
   el.innerHTML = html; el.style.display = "block";
 }
+// Record errors, but only show them if the app itself failed to start.
+// Browser extensions also raise errors on the page (Safari reports those as a
+// bare "Script error."); they don't affect the app, so they're ignored once it's running.
+var bootErrors = [];
 window.addEventListener("error", function (e) {
-  if (/unbuilt source/.test(e.message)) return;
-  showFatal("<b>Something went wrong loading the app.</b><br>" + String(e.message).replace(/</g, "&lt;") +
-    "<br>Try the latest Safari, Chrome or Edge, and please report this message.");
+  bootErrors.push(e.message + (e.filename ? " (" + e.filename.split("/").pop() + ":" + e.lineno + ")" : ""));
+});
+window.addEventListener("load", function () {
+  setTimeout(function () {
+    if (window.__appReady || document.getElementById("fatal").style.display === "block") return;
+    showFatal("<b>Something went wrong loading the app.</b><br>" +
+      (bootErrors.join("<br>") || "Unknown error").replace(/</g, "&lt;").replace(/&lt;br>/g, "<br>") +
+      "<br>Try turning off Safari extensions for this site, or use the latest Safari or Chrome, and please report this message.");
+  }, 0);
 });
 </script>
 <script>/*__PDFLIB__*/</script>
@@ -792,6 +802,7 @@ function init() {
 init();
 show("info");
 // Expose for automated testing.
+window.__appReady = true;
 window.__capf = { buildPdf, get state() { return S; }, set state(v) { S = v; init(); } };
 </script>
 </body>
