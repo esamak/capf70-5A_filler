@@ -22,7 +22,7 @@
    "page": 0,
    "letter": "A",
    "name": "Certificates and Documents",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -61,7 +61,7 @@
    "page": 0,
    "letter": "B",
    "name": "Airworthiness Requirements",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -100,7 +100,7 @@
    "page": 0,
    "letter": "C",
    "name": "Weather Information",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -139,7 +139,7 @@
    "page": 0,
    "letter": "D",
    "name": "Cross-Country Flight Planning",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -178,7 +178,7 @@
    "page": 0,
    "letter": "E",
    "name": "National Airspace System",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -217,7 +217,7 @@
    "page": 0,
    "letter": "F",
    "name": "Performance and Limitations",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -256,7 +256,7 @@
    "page": 0,
    "letter": "G",
    "name": "Operations of Systems",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -295,7 +295,7 @@
    "page": 0,
    "letter": "H",
    "name": "Human Factors",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -334,7 +334,7 @@
    "page": 0,
    "letter": "I",
    "name": "Seaplane Char, Bases, and Rules",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -373,7 +373,7 @@
    "page": 0,
    "letter": "A",
    "name": "Preflight Assessment",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -412,7 +412,7 @@
    "page": 0,
    "letter": "B",
    "name": "Flight Deck Management",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -451,7 +451,7 @@
    "page": 0,
    "letter": "C",
    "name": "Engine Starting",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -490,7 +490,7 @@
    "page": 0,
    "letter": "D",
    "name": "Taxiing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -529,7 +529,7 @@
    "page": 0,
    "letter": "E",
    "name": "Taxiing and Sailing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -568,7 +568,7 @@
    "page": 0,
    "letter": "F",
    "name": "Before Takeoff Check",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -607,7 +607,7 @@
    "page": 0,
    "letter": "A",
    "name": "Comm and ATC Light Signals",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -646,7 +646,7 @@
    "page": 0,
    "letter": "B",
    "name": "Traffic Patterns",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -685,7 +685,7 @@
    "page": 0,
    "letter": "A",
    "name": "Normal Takeoff and Climb",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -723,7 +723,7 @@
    "page": 0,
    "letter": "B",
    "name": "Normal Approach and Landing",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -761,7 +761,7 @@
    "page": 0,
    "letter": "C",
    "name": "Soft-Field Takeoff and Climb",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -800,7 +800,7 @@
    "page": 0,
    "letter": "D",
    "name": "Soft-Field Approach and Landing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -839,7 +839,7 @@
    "page": 0,
    "letter": "E",
    "name": "Short-Field Takeoff and Climb",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -877,7 +877,7 @@
    "page": 0,
    "letter": "F",
    "name": "Short-Field Approach and Landing",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -915,7 +915,7 @@
    "page": 0,
    "letter": "G",
    "name": "Confined Area T/O and Climb",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -953,7 +953,7 @@
    "page": 0,
    "letter": "H",
    "name": "Confined Area Approach and Land",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -991,7 +991,7 @@
    "page": 0,
    "letter": "I",
    "name": "Glassy Water T/O and Climb",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1030,7 +1030,7 @@
    "page": 0,
    "letter": "J",
    "name": "Glassy Water Approach and Land",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1069,7 +1069,7 @@
    "page": 0,
    "letter": "K",
    "name": "Rough Water T/O and Climb",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1108,7 +1108,7 @@
    "page": 0,
    "letter": "L",
    "name": "Rough Water Approach and Land",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1147,7 +1147,7 @@
    "page": 0,
    "letter": "M",
    "name": "Forward Slip to a Landing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1186,7 +1186,7 @@
    "page": 0,
    "letter": "N",
    "name": "Go-Around/Rejected Landing",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1224,7 +1224,7 @@
    "page": 0,
    "letter": "A",
    "name": "Steep Turns",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1262,7 +1262,7 @@
    "page": 0,
    "letter": "B",
    "name": "Ground Reference Maneuvers",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1301,7 +1301,7 @@
    "page": 0,
    "letter": "A",
    "name": "Pilotage and Dead Reckoning",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1340,7 +1340,7 @@
    "page": 0,
    "letter": "B",
    "name": "Navigation Systems and Radar Services",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1379,7 +1379,7 @@
    "page": 0,
    "letter": "C",
    "name": "Diversion",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1418,7 +1418,7 @@
    "page": 0,
    "letter": "D",
    "name": "Lost Procedures",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1457,7 +1457,7 @@
    "page": 0,
    "letter": "A",
    "name": "Maneuvering During Slow Flight",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1495,7 +1495,7 @@
    "page": 0,
    "letter": "B",
    "name": "Power-Off Stalls",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1533,7 +1533,7 @@
    "page": 0,
    "letter": "C",
    "name": "Power-On Stalls",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1572,7 +1572,7 @@
    "page": 0,
    "letter": "D",
    "name": "Spin Awareness",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1611,7 +1611,7 @@
    "page": 0,
    "letter": "A",
    "name": "Straight-and-Level Flight",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1649,7 +1649,7 @@
    "page": 0,
    "letter": "B",
    "name": "Constant Airspeed Climbs",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1687,7 +1687,7 @@
    "page": 0,
    "letter": "C",
    "name": "Constant Airspeed Descents",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1725,7 +1725,7 @@
    "page": 0,
    "letter": "D",
    "name": "Turns to Headings",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1763,7 +1763,7 @@
    "page": 0,
    "letter": "E",
    "name": "Recovery from Unusual Flight Attitudes",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1801,7 +1801,7 @@
    "page": 0,
    "letter": "F",
    "name": "Radio Comm, Nav Sys/Fac, and Rdr Svcs",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1839,7 +1839,7 @@
    "page": 0,
    "letter": "A",
    "name": "Emergency Descent",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1878,7 +1878,7 @@
    "page": 0,
    "letter": "B",
    "name": "Emergency Approach and Landing",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -1916,7 +1916,7 @@
    "page": 0,
    "letter": "C",
    "name": "Systems and Equipment Malfunction",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1955,7 +1955,7 @@
    "page": 0,
    "letter": "D",
    "name": "Emergency Equipment and Survival Gear",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -1994,7 +1994,7 @@
    "page": 0,
    "letter": "E",
    "name": "Engine Fail T/O before Vmc",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2033,7 +2033,7 @@
    "page": 0,
    "letter": "F",
    "name": "Engine Fail After Liftoff",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2072,7 +2072,7 @@
    "page": 0,
    "letter": "G",
    "name": "Approach/Land Inop Engine",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -2110,7 +2110,7 @@
    "page": 0,
    "letter": "A",
    "name": "Maneuvering with One Engine Inop",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2149,7 +2149,7 @@
    "page": 0,
    "letter": "B",
    "name": "Vmc Demonstration",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2188,7 +2188,7 @@
    "page": 0,
    "letter": "C",
    "name": "Engine Fail During Flt (ref to instruments)",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2227,7 +2227,7 @@
    "page": 0,
    "letter": "D",
    "name": "Instr Apprch and Lnd with Inop Engine",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2266,7 +2266,7 @@
    "page": 0,
    "letter": "A",
    "name": "Night Preparation",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2305,7 +2305,7 @@
    "page": 0,
    "letter": "A",
    "name": "After Landing, Parking and Securing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2344,7 +2344,7 @@
    "page": 0,
    "letter": "B",
    "name": "Seaplane Post-Landing Proc",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2383,7 +2383,7 @@
    "page": 0,
    "letter": "A",
    "name": "CAPR 70-1 Compliance",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2422,7 +2422,7 @@
    "page": 0,
    "letter": "B",
    "name": "Risk Assessment and Release Procedures",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2461,7 +2461,7 @@
    "page": 0,
    "letter": "C",
    "name": "Electronic Flight Bag",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2500,7 +2500,7 @@
    "page": 0,
    "letter": "D",
    "name": "WMIRS Use",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2539,7 +2539,7 @@
    "page": 0,
    "letter": "E",
    "name": "Positive Exchange of Flight Controls",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2577,7 +2577,7 @@
    "page": 0,
    "letter": "F",
    "name": "Passenger and Crew Safety Briefing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2616,7 +2616,7 @@
    "page": 0,
    "letter": "G",
    "name": "Sterile Cockpit Procedures",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2654,7 +2654,7 @@
    "page": 0,
    "letter": "H",
    "name": "Aircraft Ground Handling",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2692,7 +2692,7 @@
    "page": 0,
    "letter": "I",
    "name": "Crew Resource Management",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2731,7 +2731,7 @@
    "page": 1,
    "letter": "A",
    "name": "G1000 Electrical System",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2770,7 +2770,7 @@
    "page": 1,
    "letter": "B",
    "name": "G1000 KOEL",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2808,7 +2808,7 @@
    "page": 1,
    "letter": "C",
    "name": "G1000 Systems Knowledge",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2846,7 +2846,7 @@
    "page": 1,
    "letter": "D",
    "name": "PFD Features and Functions",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2884,7 +2884,7 @@
    "page": 1,
    "letter": "E",
    "name": "MFD Features and Functions",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -2922,7 +2922,7 @@
    "page": 1,
    "letter": "F",
    "name": "Flight Plan Construction",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -2961,7 +2961,7 @@
    "page": 1,
    "letter": "G",
    "name": "User Waypoint Construction",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3000,7 +3000,7 @@
    "page": 1,
    "letter": "H",
    "name": "PFD/MFD Failure",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3039,7 +3039,7 @@
    "page": 1,
    "letter": "I",
    "name": "AHRS/ADC Failure",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3077,7 +3077,7 @@
    "page": 1,
    "letter": "J",
    "name": "Autopilot Limitations",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3115,7 +3115,7 @@
    "page": 1,
    "letter": "K",
    "name": "Autopilot Mode Awareness",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3154,7 +3154,7 @@
    "page": 1,
    "letter": "L",
    "name": "Autopilot or Electric Trim Failure",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "U",
@@ -3191,7 +3191,7 @@
    "page": 1,
    "letter": "A",
    "name": "Preflight Preparation",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -3229,7 +3229,7 @@
    "page": 1,
    "letter": "B",
    "name": "ATC Clearance and Traffic Procedures",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -3267,7 +3267,7 @@
    "page": 1,
    "letter": "C",
    "name": "Holding Procedures",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -3305,7 +3305,7 @@
    "page": 1,
    "letter": "D",
    "name": "Intercept/Tracking Courses",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -3343,7 +3343,7 @@
    "page": 1,
    "letter": "E",
    "name": "Precision Approach",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3382,7 +3382,7 @@
    "page": 1,
    "letter": "F",
    "name": "Non-Precision Approach",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3421,7 +3421,7 @@
    "page": 1,
    "letter": "G",
    "name": "Circling Approach (verbal at a minimum)",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -3460,7 +3460,7 @@
    "page": 1,
    "letter": "H",
    "name": "Missed Approach",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3499,7 +3499,7 @@
    "page": 1,
    "letter": "A",
    "name": "Autopilot Instrument Procedures",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3537,7 +3537,7 @@
    "page": 1,
    "letter": "B",
    "name": "WAAS and RAIM",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3575,7 +3575,7 @@
    "page": 1,
    "letter": "A",
    "name": "Wind Direction and Turbulence Zones",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3613,7 +3613,7 @@
    "page": 1,
    "letter": "B",
    "name": "Flight Information",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3652,7 +3652,7 @@
    "page": 1,
    "letter": "C",
    "name": "Flight Limitations",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3690,7 +3690,7 @@
    "page": 1,
    "letter": "A",
    "name": "Identify Approach Tactics",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3728,7 +3728,7 @@
    "page": 1,
    "letter": "B",
    "name": "ID Areas of Turbulence and Downdrafts",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3766,7 +3766,7 @@
    "page": 1,
    "letter": "C",
    "name": "Canyon Flying",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3804,7 +3804,7 @@
    "page": 1,
    "letter": "A",
    "name": "System Knowledge",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -3843,7 +3843,7 @@
    "page": 1,
    "letter": "B",
    "name": "Safety Procedures",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3881,7 +3881,7 @@
    "page": 1,
    "letter": "A",
    "name": "Run-up and Takeoff",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3919,7 +3919,7 @@
    "page": 1,
    "letter": "B",
    "name": "Cruise",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3957,7 +3957,7 @@
    "page": 1,
    "letter": "C",
    "name": "Descent and Landing",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -3995,7 +3995,7 @@
    "page": 1,
    "letter": "A",
    "name": "Adherence to CAPP 60-40",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4034,7 +4034,7 @@
    "page": 1,
    "letter": "B",
    "name": "Demonstrate Syllabus Maneuvers/Items",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -4072,7 +4072,7 @@
    "page": 1,
    "letter": "C",
    "name": "Knowledge of AF(J)ROTC Program/Oplan",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4111,7 +4111,7 @@
    "page": 1,
    "letter": "D",
    "name": "Risk Management for Orientation Flights",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -4149,7 +4149,7 @@
    "page": 1,
    "letter": "A",
    "name": "Application of FAA ACS",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4188,7 +4188,7 @@
    "page": 1,
    "letter": "B",
    "name": "Application of CAPP 72-6 Evaluation Criteria",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4227,7 +4227,7 @@
    "page": 1,
    "letter": "C",
    "name": "Brief instructional scenario",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4266,7 +4266,7 @@
    "page": 1,
    "letter": "D",
    "name": "Demonstrate an instructional scenario for the briefed maneuver",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -4304,7 +4304,7 @@
    "page": 1,
    "letter": "A",
    "name": "Risk Management for Evaluations",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "U",
@@ -4342,7 +4342,7 @@
    "page": 1,
    "letter": "B",
    "name": "Evaluation Plan of Action",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4381,7 +4381,7 @@
    "page": 1,
    "letter": "C",
    "name": "Evaluate the left seat check pilot flying one inflight maneuver and one landing",
-   "flown": true,
+   "required": true,
    "allowed": [
     "Q",
     "QT",
@@ -4419,7 +4419,7 @@
    "page": 1,
    "letter": "A",
    "name": "Teaching Flight Management Skills",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",
@@ -4458,7 +4458,7 @@
    "page": 1,
    "letter": "B",
    "name": "Failure Simulation",
-   "flown": false,
+   "required": false,
    "allowed": [
     "Q",
     "QT",

@@ -135,7 +135,8 @@ def main(src, dst):
                     allowed.append(g)
             tasks.append({
                 "page": pno, "y": y, "right": right, "letter": letter, "name": name,
-                "flown": label["italic"],
+                # CAPS 72-5: tasks that must be performed and graded are in italics.
+                "required": label["italic"],
                 "allowed": allowed, "boxes": boxes,
             })
 

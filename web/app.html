@@ -68,7 +68,7 @@ textarea{min-height:120px;resize:vertical}
 .sec > summary .chev{transition:transform .15s;color:var(--muted)}
 .sec[open] > summary .chev{transform:rotate(90deg)}
 .sec > summary .meta{margin-left:auto;font-weight:400;font-size:13px;color:var(--muted)}
-.tag{font-size:11px;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--line);color:var(--muted);white-space:nowrap}
+.tag{text-transform:none;letter-spacing:0;font-size:11px;font-weight:600;padding:2px 7px;border-radius:999px;background:var(--line);color:var(--muted);white-space:nowrap}
 .area{padding:4px 16px 8px;border-top:1px solid var(--line)}
 .areahead{display:flex;align-items:center;gap:8px;padding:10px 0 4px;flex-wrap:wrap}
 .areahead b{margin-right:auto}
@@ -80,6 +80,13 @@ textarea{min-height:120px;resize:vertical}
 .grades{display:flex;gap:4px}
 .grades button{min-width:44px;height:40px;border-radius:8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);font:inherit;font-weight:600;font-size:14px;cursor:pointer;padding:0 6px}
 .grades button.na{visibility:hidden}
+.grades button:disabled{cursor:default}
+.grades button:disabled:not([aria-pressed="true"]){opacity:.3}
+.grades button.auto{border-style:dashed;border-color:var(--np);color:var(--np)}
+.tag.req{background:var(--warn-bg);color:var(--warn)}
+.tag.done{background:var(--soft);color:var(--q)}
+.issues li[data-go]{cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+.issues li.head{font-weight:600}
 .grades button[aria-pressed="true"][data-g="Q"]{background:var(--q);border-color:var(--q);color:var(--on-grade)}
 .grades button[aria-pressed="true"][data-g="QT"]{background:var(--qt);border-color:var(--qt);color:var(--on-grade)}
 .grades button[aria-pressed="true"][data-g="U"]{background:var(--u);border-color:var(--u);color:var(--on-grade)}
@@ -96,6 +103,9 @@ textarea{min-height:120px;resize:vertical}
 /* signatures */
 .sig{border:1px dashed var(--line);border-radius:8px;background:#fff;position:relative;touch-action:none}
 .sig canvas{display:block;width:100%;height:120px;cursor:crosshair}
+.sig .unsat{display:none;position:absolute;inset:0;align-items:center;justify-content:center;background:#fff;border-radius:8px;color:#0b2a6b;font-weight:700;font-size:20px;letter-spacing:.04em}
+.sig.off .unsat{display:flex}
+.sig.off canvas{pointer-events:none}
 .sigrow{display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:13px;color:var(--muted)}
 
 /* review */
@@ -111,6 +121,10 @@ textarea{min-height:120px;resize:vertical}
 footer.bar{position:fixed;left:0;right:0;bottom:0;background:var(--panel);border-top:1px solid var(--line);padding:10px 16px;padding-bottom:max(10px,env(safe-area-inset-bottom));z-index:20}
 footer.bar .in{max-width:980px;margin:0 auto;display:flex;gap:8px;align-items:center}
 footer.bar .in .sp{margin-right:auto}
+dialog.ask{border:1px solid var(--line);border-radius:var(--radius);background:var(--panel);color:var(--ink);padding:18px;width:min(520px,calc(100vw - 32px));max-height:85vh;overflow:auto}
+dialog.ask::backdrop{background:rgba(0,0,0,.5)}
+dialog.ask h2{font-size:17px;margin:0 0 10px}
+dialog.ask .choices{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
 .toast{position:fixed;left:50%;bottom:80px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;z-index:30;max-width:90vw}
 .toast.on{opacity:1}
 @media (max-width:640px){
@@ -145,6 +159,7 @@ footer.bar .in .sp{margin-right:auto}
       <label><input type="radio" name="checkType" value="annual" data-k="checkType"> Annual</label>
       <label><input type="radio" name="checkType" value="abbreviated" data-k="checkType"> Abbreviated</label>
     </div>
+    <p class="hint" id="abbrHint" style="display:none;margin:0 0 12px">Abbreviated: the check pilot decides which maneuvers are needed (CAPR 70-1 ¶7.3), so required tasks are flagged but don't block the PDF.</p>
     <div class="grid">
       <label class="f">Date of evaluation<input type="date" data-k="date"></label>
       <label class="f">Member's name<input type="text" data-k="memberName" autocomplete="off" placeholder="Last, First M."></label>
@@ -165,8 +180,13 @@ footer.bar .in .sp{margin-right:auto}
 
   <div class="card">
     <h2>Ops quals endorsements evaluated</h2>
-    <p class="hint" style="margin:0 0 10px">Check each endorsement being evaluated. Its task section opens on the Tasks tab, and your initials print in its box on the form. Leave a box unchecked to leave it blank.</p>
+    <p class="hint" style="margin:0 0 10px">Check each endorsement being evaluated. Its task section opens on the Tasks tab, and your initials print in its box on the form, unless one of its tasks is graded U or the ride is unsatisfactory.</p>
     <div class="endo" id="endoList"></div>
+    <div id="ipcRow" style="display:none;margin-top:12px">
+      <label style="display:flex;gap:8px;align-items:center;font-size:14px"><input type="checkbox" data-k="ipcVerbal"> Instrument Demo evaluated verbally after a recent FAA IPC (CAPR 70-1 ¶7.6.3)</label>
+      <div class="grid" id="ipcDateRow" style="margin-top:8px"><label class="f">IPC completion date<input type="date" data-k="ipcDate"></label></div>
+      <p class="hint" id="ipcHint"></p>
+    </div>
     <div class="grid" style="margin-top:12px">
       <label class="f">Evaluator's initials<input type="text" data-k="evalInitials" maxlength="4" autocapitalize="characters" placeholder="e.g. JQP"></label>
       <label class="f">Other endorsements<input type="text" data-k="otherEndorsements"></label>
@@ -178,9 +198,10 @@ footer.bar .in .sp{margin-right:auto}
 <section class="view" id="view-tasks">
   <div class="card">
     <div class="legend" id="legend">
-      <span><b>Q</b> Qualified</span><span><b>QT</b> Qualified, training required</span><span><b>U</b> Unqualified</span><span><b>V</b> Verbal</span><span><b>NP</b> Not performed</span>
+      <span><b>Q</b> Qualified</span><span><b>QT</b> Qualified with training</span><span><b>U</b> Unqualified</span><span><b>V</b> Verbal</span><span><b>NP</b> Not performed</span>
     </div>
     <p class="hint">Only the grades the form allows for each task are shown (the form prints a dash in the others). Tap a selected grade again to clear it.</p>
+    <p class="hint"><span class="tag req">Required</span> tasks (italic on the form, per CAPS 72-5) on an annual evaluation need a grade before the PDF can be made, and NP doesn't count. Any other task you leave ungraded prints as NP, shown with a dashed NP button. Tasks outside the aircraft's class or the checked endorsements are set to NP for you.</p>
   </div>
   <div class="toolbar">
     <label><input type="checkbox" id="showAll"> Show sections for endorsements not being evaluated</label>
@@ -193,32 +214,33 @@ footer.bar .in .sp{margin-right:auto}
   <div class="card">
     <h2>Review of certificates and documents</h2>
     <div class="grid">
-      <label class="f">FAA pilot cert no.<input type="text" data-k="faaCert" autocomplete="off"></label>
-      <label class="f">Medical class and issue date<input type="text" data-k="medical" placeholder="e.g. 3rd / 12 Mar 2025 or BasicMed"></label>
-      <label class="f">Flight review date<input type="text" data-k="flightReview" placeholder="e.g. 4 Jun 2025"></label>
-      <label class="f">CFI cert expiration date<input type="text" data-k="cfiExp" placeholder="if applicable"></label>
+      <label class="f"><span>FAA pilot cert no. <span class="tag" data-reqf="faaCert"></span></span><input type="text" data-k="faaCert" autocomplete="off"></label>
+      <label class="f"><span>Medical class and issue date <span class="tag" data-reqf="medical"></span></span><input type="text" data-k="medical" placeholder="e.g. 3rd / 12 Mar 2025 or BasicMed"></label>
+      <label class="f"><span>Flight review date <span class="tag" data-reqf="flightReview"></span></span><input type="text" data-k="flightReview" placeholder="e.g. 4 Jun 2025"></label>
+      <label class="f"><span>CFI cert expiration date <span class="tag" data-reqf="cfiExp"></span></span><input type="text" data-k="cfiExp" placeholder="e.g. 31 Dec 2026, if applicable"></label>
     </div>
   </div>
 
   <div class="card">
     <h2>Certification by evaluated pilot</h2>
     <div class="grid">
-      <label class="f">Date signed<input type="date" data-k="pilotSignDate"></label>
+      <label class="f"><span>Date signed <span class="tag" data-reqf="pilotSignDate"></span></span><input type="date" data-k="pilotSignDate"></label>
     </div>
-    <h3>Pilot's signature</h3>
+    <h3>Pilot's signature <span class="tag" data-reqf="pilotSignature"></span></h3>
     <div class="sig" data-sig="pilotSignature"><canvas></canvas></div>
-    <div class="sigrow"><span>Sign with finger or stylus. Leave blank to sign on paper later.</span><button class="btn small" data-clear="pilotSignature">Clear</button></div>
+    <div class="sigrow"><span>Sign with finger or stylus.</span><button class="btn small" data-clear="pilotSignature">Clear</button></div>
   </div>
 
   <div class="card">
     <h2>Certification of evaluator</h2>
     <div class="grid">
       <label class="f">Aircraft qualifications to renew<input type="text" data-k="qualsToRenew" placeholder="e.g. C172, C182"></label>
-      <label class="f">Evaluator CAP ID#<input type="text" data-k="evalCapId" inputmode="numeric"></label>
+      <label class="f"><span>Evaluator CAP ID# <span class="tag" data-reqf="evalCapId"></span></span><input type="text" data-k="evalCapId" inputmode="numeric"></label>
     </div>
-    <h3>CAP CP / evaluator's signature</h3>
-    <div class="sig" data-sig="evalSignature"><canvas></canvas></div>
-    <div class="sigrow"><span>Leave blank to sign later.</span><button class="btn small" data-clear="evalSignature">Clear</button></div>
+    <h3>CAP CP / evaluator's signature <span class="tag" data-reqf="evalSignature"></span></h3>
+    <label id="unsatRow" style="display:none;gap:8px;align-items:center;margin-bottom:8px;font-size:14px"><input type="checkbox" data-k="failRide"> Mark the whole ride unsatisfactory instead of signing</label>
+    <div class="sig" data-sig="evalSignature"><canvas></canvas><div class="unsat">UNSATISFACTORY</div></div>
+    <div class="sigrow"><span id="evalSigHint"></span><button class="btn small" data-clear="evalSignature">Clear</button></div>
   </div>
 
   <details class="card">
@@ -233,8 +255,9 @@ footer.bar .in .sp{margin-right:auto}
 
   <div class="card">
     <h2>Comments</h2>
+    <ul class="issues" id="debriefNeed"></ul>
     <label class="f">General comments<textarea data-k="comments" placeholder="Debrief, restrictions, training requirements…"></textarea></label>
-    <label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:14px"><input type="checkbox" data-k="includeNotes"> Append task notes (e.g. reasons for QT / U) to the comments</label>
+    <label style="display:flex;gap:8px;align-items:center;margin-top:10px;font-size:14px"><input type="checkbox" data-k="includeNotes"> Append task notes (e.g. QT) to the comments. Notes on tasks graded U always print, first.</label>
     <p class="hint" id="commentFit"></p>
   </div>
 </section>
@@ -244,6 +267,7 @@ footer.bar .in .sp{margin-right:auto}
   <div class="card">
     <h2>Summary</h2>
     <div class="summary" id="summary"></div>
+    <label style="display:flex;gap:8px;align-items:center;margin-bottom:12px;font-size:14px"><input type="checkbox" data-k="failRide"> Whole ride unsatisfactory (check pilot's judgment)</label>
     <ul class="issues" id="issues"></ul>
   </div>
   <div class="card">
@@ -264,6 +288,23 @@ footer.bar .in .sp{margin-right:auto}
   <button class="btn" id="prevBtn">Back</button>
   <button class="btn primary" id="nextBtn">Next</button>
 </div></footer>
+<dialog class="ask" id="mishapDlg" aria-labelledby="mishapQ">
+  <h2 id="mishapQ">Was this failure associated with aircraft damage, or any other occurrence that requires a mishap report and a CAPSIS entry?</h2>
+  <div class="choices" id="mishapYesNo">
+    <button class="btn" id="mishapYes">Yes</button>
+    <button class="btn" id="mishapNo">No, download the PDF</button>
+    <button class="btn" data-mishap-cancel>Cancel</button>
+  </div>
+  <div id="mishapMore" style="display:none">
+    <p style="margin:0 0 8px"><b>Please report this incident through the proper channels.</b></p>
+    <p style="margin:0">Make the initial notification under your region's supplement, then record it in CAPSIS within 48 hours (CAPR 160-2 ¶6.3 and ¶6.6). Don't put mishap details on this form.</p>
+    <div class="choices">
+      <button class="btn primary" id="mishapGo">OK, download the PDF</button>
+      <button class="btn" id="mishapBack">Back</button>
+      <button class="btn" data-mishap-cancel>Cancel</button>
+    </div>
+  </div>
+</dialog>
 <div class="toast" id="toast"></div>
 
 <script>
@@ -304,11 +345,13 @@ const GRADES = LAYOUT.grades;
 const STORE_KEY = "capf705a-draft-v1";
 const VIEWS = ["info", "tasks", "cert", "review"];
 
-// Which endorsement opens which task section. Sections 1-2 are always graded.
-const ENDO_SECTION = {
-  g1000Vfr: "Section 3.", instrumentDemo: "Section 4.", g1000Ifr: "Section 5.",
-  mountain: "Section 6.", turbo: "Section 7.", orientation: "Section 8.",
-  instructor: "Section 9.", checkPilot: "Section 9.", g1000Ip: "Section 10.",
+// Endorsements that bring each task area into the evaluation. Areas not listed
+// (Sections 1-2) always apply. CAPS 72-5: a check pilot candidate must also
+// accomplish the required tasks in the instructor pilot area (XXII).
+const AREA_ENDO = {
+  XIV: ["g1000Vfr"], XV: ["instrumentDemo"], XVI: ["g1000Ifr"],
+  XVII: ["mountain"], XVIII: ["mountain"], XIX: ["turbo"], XX: ["turbo"],
+  XXI: ["orientation"], XXII: ["instructor", "checkPilot"], XXIII: ["checkPilot"], XXIV: ["g1000Ip"],
 };
 
 const $ = (s, r = document) => r.querySelector(s);
@@ -316,7 +359,7 @@ const $$ = (s, r = document) => [...r.querySelectorAll(s)];
 
 function blank() {
   return {
-    checkType: "annual", date: today(), memberName: "", capId: "", aircraft: "",
+    checkType: "annual", failRide: false, ipcVerbal: false, ipcDate: "", date: today(), memberName: "", capId: "", aircraft: "",
     airplaneClass: "ASEL", sortieTime: "", evalInitials: "", otherEndorsements: "",
     endorsements: {}, grades: {}, notes: {},
     faaCert: "", medical: "", flightReview: "", cfiExp: "",
@@ -335,27 +378,38 @@ function fmtDate(iso) {
   return `${d} ${mon} ${y}`;
 }
 
+// Mishap answers are never kept with the evaluation.
+function fromDraft(d) {
+  delete d.mishap;
+  return Object.assign(blank(), d);
+}
 let S = load();
 function load() {
   try {
     const raw = localStorage.getItem(STORE_KEY);
-    if (raw) return Object.assign(blank(), JSON.parse(raw));
+    if (raw) return fromDraft(JSON.parse(raw));
   } catch (e) {}
   return blank();
 }
-let saveTimer;
+let saveTimer = null;
+function writeDraft() {
+  clearTimeout(saveTimer); saveTimer = null;
+  try {
+    localStorage.setItem(STORE_KEY, JSON.stringify(S));
+    $("#saved").textContent = "Draft saved on this device";
+  } catch (e) {
+    $("#saved").textContent = "Couldn't autosave — use Save draft file";
+  }
+}
 function save() {
   clearTimeout(saveTimer);
-  saveTimer = setTimeout(() => {
-    try {
-      localStorage.setItem(STORE_KEY, JSON.stringify(S));
-      $("#saved").textContent = "Draft saved on this device";
-    } catch (e) {
-      $("#saved").textContent = "Couldn't autosave — use Save draft file";
-    }
-  }, 300);
+  saveTimer = setTimeout(writeDraft, 300);
   refreshCounts();
 }
+// Don't lose the last change if the page is closed or backgrounded right after it.
+const flushDraft = () => { if (saveTimer !== null) writeDraft(); };
+window.addEventListener("pagehide", flushDraft);
+document.addEventListener("visibilitychange", () => { if (document.hidden) flushDraft(); });
 
 function toast(msg) {
   const t = $("#toast");
@@ -393,6 +447,7 @@ function bindFields() {
       else S[k] = el.value;
       if (k === "comments" || k === "includeNotes") fitComments();
       save();
+      if (k === "failRide") renderReview();
     };
   });
 }
@@ -412,16 +467,148 @@ function renderEndo() {
 }
 
 /* ---------- tasks ---------- */
-function sectionActive(sec) {
-  if (/^Section [12]\./.test(sec)) return true;
-  return Object.entries(ENDO_SECTION).some(([k, s]) => S.endorsements[k] && sec.startsWith(s));
+const PERFORMED = ["Q", "QT", "U"];
+const APPROACHES = ["XV.E", "XV.F", "XV.G"];
+const TASK = Object.fromEntries(LAYOUT.tasks.map(t => [t.id, t]));
+const roman = t => t.id.split(".")[0];
+const isSea = () => ["ASES", "AMES"].includes(S.airplaneClass);
+const isMulti = () => ["AMEL", "AMES"].includes(S.airplaneClass);
+
+function endoApplies(t) {
+  const keys = AREA_ENDO[roman(t)];
+  return !keys || keys.some(k => S.endorsements[k]);
 }
 function classApplies(t) {
-  if (!t.only) return true;
-  const c = S.airplaneClass;
-  if (t.only === "ASES") return c === "ASES" || c === "AMES";
-  if (t.only === "AMEL") return c === "AMEL" || c === "AMES";
+  return !t.only || (t.only === "ASES" ? isSea() : isMulti());
+}
+const applies = t => endoApplies(t) && classApplies(t);
+
+/* Failure (CAPS 72-5 "Grading"). These read the stored U directly. */
+const isU = t => applies(t) && S.grades[t.id] === "U";
+// A U in Section 1 or 2, or the check pilot's judgment, fails the whole ride.
+const coreFailed = () => LAYOUT.tasks.some(t => !AREA_ENDO[roman(t)] && isU(t));
+const rideFailed = () => !!S.failRide || coreFailed();
+// A U in an endorsement's tasks fails that endorsement.
+const endoFailed = key => LAYOUT.tasks.some(t => AREA_ENDO[roman(t)]?.includes(key) && isU(t));
+const awards = key => !!S.endorsements[key] && !rideFailed() && !endoFailed(key);
+
+// CAPS 72-5's mandatory list is for annual evaluations; CAPR 70-1 7.3 leaves the
+// content of an abbreviated one to the check pilot.
+const isAnnual = () => S.checkType !== "abbreviated";
+// CAPR 70-1 7.6.3: instrument requirements may be addressed verbally after an FAA
+// IPC within the six calendar months preceding the Form 5.
+function ipcInWindow() {
+  if (!S.ipcDate || !S.date || S.ipcDate > S.date) return false;
+  const months = iso => { const [y, m] = iso.split("-").map(Number); return y * 12 + m; };
+  return months(S.date) - months(S.ipcDate) <= 6;
+}
+const ipcActive = () => !!(S.endorsements.instrumentDemo && S.ipcVerbal && ipcInWindow());
+
+// Mandatory (italic) for this aircraft class and these endorsements.
+function isMandatory(t) {
+  if (!t.required || !applies(t)) return false;
+  // Class substitutions: confined area replaces short field (sea);
+  // inop-engine approach and landing replaces emergency approach (multi).
+  if (isSea() && (t.id === "IV.E" || t.id === "IV.F")) return false;
+  if (isMulti() && t.id === "IX.B") return false;
+  // After an IPC only circling ("verbal at a minimum") is still needed.
+  if (ipcActive() && roman(t) === "XV" && t.id !== "XV.G") return false;
   return true;
+}
+// Mandatory AND still blocking: annual, and neither the ride nor every checked
+// endorsement that needs the task has already failed.
+function isRequired(t) {
+  if (!isMandatory(t) || !isAnnual() || rideFailed()) return false;
+  const keys = AREA_ENDO[roman(t)];
+  return !keys || keys.some(k => S.endorsements[k] && !endoFailed(k));
+}
+// Changes whenever the set of required tasks could.
+const failState = () => [rideFailed(), ...LAYOUT.endorsements.map(e => endoFailed(e.key))].join();
+// The grade that counts. Tasks outside the evaluation are always NP (the stored
+// grade is kept, so re-checking an endorsement brings it back), and NP never
+// satisfies a required task.
+function gradeOf(t) {
+  if (!applies(t)) return "NP";
+  const g = S.grades[t.id];
+  if (!g || !t.allowed.includes(g) || (g === "NP" && isRequired(t))) return null;
+  return g;
+}
+// What goes on the form: everything still ungraded becomes NP.
+const printGrade = t => gradeOf(t) || "NP";
+const gradedCount = tasks => tasks.filter(t => applies(t) && gradeOf(t)).length;
+
+// Tasks and the approach rule.
+function missingTasks() {
+  const out = LAYOUT.tasks.filter(t => isRequired(t) && !gradeOf(t))
+    .map(t => ({ id: t.id, msg: `${t.id} ${t.name}` }));
+  if (S.endorsements.instrumentDemo && isAnnual() && !ipcActive() && !rideFailed() && !endoFailed("instrumentDemo") && !APPROACHES.some(id => PERFORMED.includes(gradeOf(TASK[id]))))
+    out.push({ id: "XV.E", msg: "XV: at least one approach (E, F or G) must be flown and graded Q, QT or U" });
+  return out;
+}
+// Certification tab. CFI expiration only when Instructor Pilot, Check Pilot or
+// G1000 IP is being evaluated (pass or fail); the evaluator must sign a passed ride.
+const CERT = [
+  ["faaCert", "FAA pilot cert no.", () => true],
+  ["medical", "Medical class and issue date", () => true],
+  ["flightReview", "Flight review date", () => true],
+  ["cfiExp", "CFI cert expiration date (Instructor Pilot, Check Pilot or G1000 IP endorsement)", () => !!(S.endorsements.instructor || S.endorsements.checkPilot || S.endorsements.g1000Ip)],
+  ["pilotSignDate", "Evaluated pilot's date signed", () => true],
+  ["pilotSignature", "Evaluated pilot's signature", () => true],
+  ["evalCapId", "Evaluator CAP ID#", () => true],
+  ["evalSignature", "Evaluator's signature", () => !rideFailed()],
+];
+const certFilled = k => !!(k in S ? String(S[k] ?? "").trim() : S.signatures[k]);
+const missingCert = () => CERT.filter(([k, , need]) => need() && !certFilled(k))
+  .map(([k, l]) => ({ id: "f:" + k, msg: "Certification: " + (k === "evalSignature" && endoFailure() && !isAnnual()
+    ? "Evaluator: sign, or mark the whole ride unsatisfactory" : l) }));
+// Every form section with a U needs a debrief note on at least one of its U tasks.
+// A ride failed on judgment alone needs general comments.
+function missingDebrief() {
+  const us = LAYOUT.tasks.filter(isU), out = [];
+  for (const sec of new Set(us.map(t => t.section))) {
+    const mine = us.filter(t => t.section === sec);
+    if (!mine.some(t => S.notes[t.id]?.trim()))
+      out.push({ id: "n:" + mine[0].id, msg: `Debrief: ${sec} has a U (${mine.map(t => t.id).join(", ")}). Add a note saying what was debriefed` });
+  }
+  if (S.failRide && !us.length && !S.comments.trim())
+    out.push({ id: "f:comments", msg: "Debrief: the ride is marked unsatisfactory. Explain why in the general comments" });
+  return out;
+}
+// Any failure: the whole ride, or any endorsement being evaluated.
+const anyFailure = () => rideFailed() || endoFailure();
+// Everything that blocks the PDF: [{id, msg}]
+const missingRequired = () => [...missingTasks(), ...missingDebrief(), ...missingCert()];
+// A checked endorsement failed: the check pilot signs if make/model proficiency was
+// shown, or marks the whole ride unsatisfactory (CAPS 72-5).
+const endoFailure = () => LAYOUT.endorsements.some(e => S.endorsements[e.key] && endoFailed(e.key));
+// Not italic, but CAPS 72-5 says these are evaluated verbally if not performed.
+function verbalMinimum(t) {
+  if (!applies(t) || isRequired(t) || !t.allowed.includes("V")) return false;
+  const r = roman(t);
+  return !rideFailed() && ((r === "IV" && isAnnual()) || ((r === "XXII" || r === "XXIII") && AREA_ENDO[r].some(awards)));
+}
+function secMeta(all) {
+  const need = all.filter(applies);
+  const left = all.filter(t => isRequired(t) && !gradeOf(t)).length;
+  return need.length ? `${gradedCount(all)}/${need.length}${left ? ` · ${left} required left` : ""}` : "all NP";
+}
+// "IV.A" = task, "n:IV.A" = that task's note, "f:key" = certification field or signature
+function go(id) {
+  if (id.startsWith("f:")) {
+    const k = id.slice(2);
+    show("cert");
+    const el = $(`#view-cert [data-k="${k}"]`) || $(`[data-sig="${k}"]`);
+    el.scrollIntoView({ block: "center" });
+    if (el.dataset.k) el.focus({ preventScroll: true });
+    return;
+  }
+  const note = id.startsWith("n:");
+  show("tasks");
+  const row = $(`.task[data-id="${note ? id.slice(2) : id}"]`);
+  if (!row) return;
+  row.closest("details.sec").open = true;
+  row.scrollIntoView({ block: "center" });
+  if (note) $(".notebtn", row).click();
 }
 const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
 
@@ -439,52 +626,72 @@ function renderTasks() {
     areas.get(t.area).push(t);
   }
   for (const [sec, areas] of bySec) {
-    const active = sectionActive(sec);
     const all = [...areas.values()].flat();
-    const graded = all.filter(t => S.grades[t.id]).length;
-    if (!active && !showAll && !graded) continue;
+    const active = all.some(endoApplies);
+    if (!active && !showAll) continue;
     const d = document.createElement("details");
     d.className = "sec"; d.dataset.sec = sec;
     d.open = sec in openState ? openState[sec] : active;
-    d.innerHTML = `<summary><span class="chev">▸</span><span>${esc(sec)}</span>${active ? "" : '<span class="tag">not selected</span>'}<span class="meta">${graded}/${all.length}</span></summary>`;
+    d.innerHTML = `<summary><span class="chev">▸</span><span>${esc(sec)}</span>${active ? "" : '<span class="tag">not selected</span>'}<span class="meta">${secMeta(all)}</span></summary>`;
     for (const [area, tasks] of areas) {
       const a = document.createElement("div");
       a.className = "area";
       a.innerHTML = `<div class="areahead"><b>${esc(area)}</b>
-        <button class="btn small" data-fill="Q">Ungraded → Q</button>
-        <button class="btn small" data-fill="NP">Ungraded → NP</button></div>`;
+        ${tasks.some(applies) ? `<button class="btn small" data-fill="Q">Ungraded → Q</button>
+        <button class="btn small" data-fill="NP">Ungraded → NP</button>` : '<span class="tag">not being evaluated</span>'}</div>
+        ${area.startsWith("XV. ") && tasks.some(applies) ? '<p class="hint">Only one approach is required: fly at least one of E, F or G. Circling (G) is at least verbal.${ipcActive() ? " Verbal after IPC: the form has no V for A–D, so leave those NP." : ""}</p>' : ""}`;
       $$("[data-fill]", a).forEach(b => b.onclick = () => {
         let n = 0;
-        for (const t of tasks) if (!S.grades[t.id] && classApplies(t) && t.allowed.includes(b.dataset.fill)) { S.grades[t.id] = b.dataset.fill; n++; }
+        for (const t of tasks) if (applies(t) && !gradeOf(t) && t.allowed.includes(b.dataset.fill) && !(b.dataset.fill === "NP" && isRequired(t))) { S.grades[t.id] = b.dataset.fill; n++; }
         save(); renderTasks();
         toast(n ? `Marked ${n} task${n > 1 ? "s" : ""} ${b.dataset.fill}` : "Nothing ungraded here");
       });
       for (const t of tasks) a.appendChild(taskRow(t));
       d.appendChild(a);
     }
-    d.addEventListener("toggle", () => {});
     list.appendChild(d);
   }
 }
 
 function taskRow(t) {
   const row = document.createElement("div");
-  const applies = classApplies(t);
-  row.className = "task" + (applies ? "" : " dim");
+  const live = applies(t), req = isRequired(t);
+  row.className = "task" + (live ? "" : " dim");
+  row.dataset.id = t.id;
   const only = t.only ? ` <span class="tag">${t.only} only</span>` : "";
-  row.innerHTML = `<div class="nm"><span class="id">${t.id}</span>${esc(t.name)}${only}
-      <div><button class="notebtn">${S.notes[t.id] ? "Edit note" : "+ Note"}</button></div></div>
-    <div class="grades">${GRADES.map(g => `<button data-g="${g}" class="${t.allowed.includes(g) ? "" : "na"}" aria-pressed="${S.grades[t.id] === g}" ${t.allowed.includes(g) ? "" : 'tabindex="-1" aria-hidden="true"'}>${g}</button>`).join("")}</div>`;
+  const usable = g => t.allowed.includes(g) && !(req && g === "NP");
+  row.innerHTML = `<div class="nm"><span class="id">${t.id}</span>${req ? `<i>${esc(t.name)}</i> <span class="tag" data-req></span>` : esc(t.name)}${only}
+      ${live ? `<div><button class="notebtn">${S.notes[t.id] ? "Edit note" : "+ Note"}</button></div>` : ""}</div>
+    <div class="grades">${GRADES.map(g => `<button data-g="${g}" class="${usable(g) ? "" : "na"}" ${usable(g) ? "" : 'tabindex="-1" aria-hidden="true"'} ${live ? "" : "disabled"}>${g}</button>`).join("")}</div>`;
+  function paint() {
+    const cur = gradeOf(t);
+    $$(".grades button", row).forEach(x => {
+      x.setAttribute("aria-pressed", cur === x.dataset.g);
+      x.classList.toggle("auto", !cur && !req && x.dataset.g === "NP");
+    });
+    const tag = $("[data-req]", row);
+    if (tag) { tag.textContent = cur ? "Required ✓" : "Required"; tag.className = "tag " + (cur ? "done" : "req"); }
+  }
+  paint();
+  if (!live) return row;
   $$(".grades button", row).forEach(b => b.onclick = () => {
     if (b.classList.contains("na")) return;
-    const g = b.dataset.g;
+    const g = b.dataset.g, before = failState();
     if (S.grades[t.id] === g) delete S.grades[t.id]; else S.grades[t.id] = g;
-    $$(".grades button", row).forEach(x => x.setAttribute("aria-pressed", S.grades[t.id] === x.dataset.g));
-    if ((g === "U" || g === "QT") && S.grades[t.id] === g && !S.notes[t.id]) openNote();
+    const wantNote = (g === "U" || g === "QT") && S.grades[t.id] === g && !S.notes[t.id];
     save();
+    if (failState() !== before) {
+      // A failure (or undoing one) changes which other tasks are required.
+      const y = window.scrollY;
+      renderTasks();
+      window.scrollTo(0, y);
+      if (wantNote) $(`.task[data-id="${t.id}"] .notebtn`)?.click();
+      return;
+    }
+    paint();
+    if (wantNote) openNote();
     const sec = row.closest("details.sec");
-    const all = LAYOUT.tasks.filter(x => x.section === sec.dataset.sec);
-    $(".meta", sec).textContent = `${all.filter(x => S.grades[x.id]).length}/${all.length}`;
+    $(".meta", sec).textContent = secMeta(LAYOUT.tasks.filter(x => x.section === sec.dataset.sec));
   });
   const nb = $(".notebtn", row);
   function openNote() {
@@ -552,13 +759,14 @@ window.addEventListener("resize", () => { if (view === "cert") sizeSigs(); });
 /* ---------- comments composition ---------- */
 function commentText() {
   const parts = [];
-  if (S.comments.trim()) parts.push(S.comments.trim());
-  if (S.includeNotes) {
-    const notes = LAYOUT.tasks.filter(t => S.notes[t.id]?.trim())
-      .map(t => `${t.id} ${t.name}${S.grades[t.id] ? ` (${S.grades[t.id]})` : ""}: ${S.notes[t.id].trim()}`);
-    if (notes.length) parts.push(notes.join("\n"));
-  }
-  return parts.join("\n\n");
+  const notes = pick => LAYOUT.tasks.filter(t => applies(t) && S.notes[t.id]?.trim() && pick(t))
+    .map(t => `${t.id} ${t.name} (${printGrade(t)}): ${S.notes[t.id].trim()}`).join("\n");
+  // Required debriefs go first so a long comment can't push them off the form.
+  parts.push(notes(isU));
+  parts.push(S.comments.trim());
+  if (ipcActive()) parts.push(`Instrument Demo requirements addressed verbally per CAPR 70-1 para 7.6.3 (FAA IPC completed ${fmtDate(S.ipcDate)}).`);
+  if (S.includeNotes) parts.push(notes(t => !isU(t)));
+  return parts.filter(Boolean).join("\n\n");
 }
 
 /* ---------- PDF text helpers (shared by preview-fit and generate) ---------- */
@@ -617,39 +825,101 @@ async function fitComments() {
 
 /* ---------- review ---------- */
 function refreshCounts() {
-  const graded = Object.keys(S.grades).length;
-  $("#progress").textContent = `${graded} task${graded === 1 ? "" : "s"} graded`;
+  const graded = gradedCount(LAYOUT.tasks), left = missingRequired().length;
+  const status = [rideFailed() && "unsatisfactory", left ? `${left} required left` : "required done"].filter(Boolean).join(" · ");
+  $("#progress").textContent = `${graded} graded${status ? " · " + status : ""}`;
+  for (const [k, , need] of CERT) {
+    const tag = $(`[data-reqf="${k}"]`), ok = certFilled(k);
+    tag.style.display = need() ? "" : "none";
+    tag.textContent = ok ? "Required ✓" : "Required";
+    tag.className = "tag " + (ok ? "done" : "req");
+  }
+  const sigHint = $("#evalSigHint");
+  const failed = rideFailed(), core = coreFailed(), choice = !failed && endoFailure();
+  sigHint.textContent = core ? "A U in Section 1 or 2 fails the ride, so UNSATISFACTORY prints here instead of a signature."
+    : failed ? "UNSATISFACTORY prints here instead of a signature. Uncheck the box to sign."
+    : choice ? "An endorsement failed. Sign if make/model proficiency was shown; otherwise mark the whole ride unsatisfactory."
+    : "Required for a passed evaluation.";
+  sigHint.style.color = choice ? "var(--warn)" : "";
+  $("#unsatRow").style.display = failed || endoFailure() ? "flex" : "none";
+  $$('[data-k="failRide"]').forEach(cb => { cb.checked = failed; cb.disabled = core; });
+  $('[data-sig="evalSignature"]').classList.toggle("off", failed);
+  $('[data-clear="evalSignature"]').disabled = failed;
+  const debrief = missingDebrief();
+  $("#debriefNeed").innerHTML = debrief.map(m => `<li class="bad" data-go="${m.id}">${esc(m.msg)}</li>`).join("");
+  $$("#debriefNeed [data-go]").forEach(li => li.onclick = () => go(li.dataset.go));
+  $("#abbrHint").style.display = isAnnual() ? "none" : "";
+  $("#ipcRow").style.display = S.endorsements.instrumentDemo ? "" : "none";
+  $("#ipcDateRow").style.display = S.ipcVerbal ? "" : "none";
+  const hint = $("#ipcHint");
+  hint.style.color = S.ipcVerbal && !ipcActive() ? "var(--bad)" : "";
+  hint.textContent = !S.ipcVerbal ? "" : ipcActive()
+    ? "XV.A–D have no V box on the form, so they print NP, and a comment citing ¶7.6.3 and the IPC date is added. Circling (XV.G) still needs at least V."
+    : "Enter an IPC date within the six calendar months before the evaluation. Until then the instrument tasks are still required.";
 }
 function renderReview() {
   const counts = Object.fromEntries(GRADES.map(g => [g, 0]));
-  Object.values(S.grades).forEach(g => counts[g]++);
+  LAYOUT.tasks.forEach(t => { if (gradeOf(t) || !isRequired(t)) counts[printGrade(t)]++; });
   $("#summary").innerHTML = GRADES.map(g => `<div><b style="color:var(--${g.toLowerCase()})">${counts[g]}</b><span>${g}</span></div>`).join("");
   const issues = [];
   const req = [["memberName", "Member's name"], ["capId", "CAP ID"], ["date", "Date of evaluation"], ["aircraft", "Aircraft make and model"], ["sortieTime", "Sortie flight time"]];
   for (const [k, l] of req) if (!String(S[k]).trim()) issues.push(["warn", `${l} is blank.`]);
-  const anyEndo = Object.values(S.endorsements).some(Boolean);
-  if (anyEndo && !S.evalInitials.trim()) issues.push(["warn", "Endorsements are checked but the evaluator's initials are blank, so the endorsement boxes will print empty."]);
-  for (const t of LAYOUT.tasks) {
-    if (sectionActive(t.section) && classApplies(t) && !S.grades[t.id]) issues.push(["warn", `${t.id} ${t.name} is ungraded.`]);
+  if (LAYOUT.endorsements.some(e => awards(e.key)) && !S.evalInitials.trim()) issues.push(["warn", "Endorsements are checked but the evaluator's initials are blank, so the endorsement boxes will print empty."]);
+  const missing = missingRequired();
+  const failed = rideFailed(), allU = LAYOUT.tasks.filter(isU), status = [];
+  if (failed) {
+    const core = allU.filter(t => !AREA_ENDO[roman(t)]).map(t => t.id);
+    status.push(["bad head", `Ride unsatisfactory${core.length ? ` (U in ${core.join(", ")})` : " (check pilot's judgment)"}. No initials, other endorsements or renewals will print, and "UNSATISFACTORY" prints in place of the evaluator's signature.`]);
+    if (!allU.length) status.push(["bad", "The ride is marked unsatisfactory, but no task is graded U."]);
+  } else for (const e of LAYOUT.endorsements) if (S.endorsements[e.key] && endoFailed(e.key)) {
+    const us = allU.filter(t => AREA_ENDO[roman(t)]?.includes(e.key)).map(t => t.id).join(", ");
+    status.push(["bad head", `${e.label} not awarded (U in ${us}). Your initials won't print for it.`]);
   }
+  if (!failed && allU.length) status.push(["warn", "If the U shows deficient judgment or airmanship, CAPS 72-5 lets you fail the whole ride: use the checkbox above or the one by your signature."]);
+  if (failed || allU.length) status.push(["warn", "Email the Wing DOV (Region DOV for region staff) a copy of the whole form, and say whether the cause extends to other qualifications (CAPR 70-1 ¶7.7.1). The comments should say what was unsatisfactory."]);
+  if (anyFailure()) status.push(["ok", "You'll be asked about a mishap report and CAPSIS entry before the PDF downloads. The answer isn't saved or printed."]);
+  const blockers = missing.length
+    ? [["bad head", `${missing.length} required item${missing.length > 1 ? "s" : ""} must be completed before the PDF can be made. Tap one to go to it:`],
+       ...missing.map(m => ["bad", m.msg, m.id])] : [];
   for (const t of LAYOUT.tasks) {
-    const g = S.grades[t.id];
-    if (g === "U") issues.push(["bad", `${t.id} ${t.name} graded U.${S.notes[t.id] ? "" : " No note entered."}`]);
-    if (g === "QT" && !S.notes[t.id]) issues.push(["warn", `${t.id} ${t.name} graded QT with no note on the training required.`]);
-    if (g && !t.allowed.includes(g)) issues.push(["bad", `${t.id} has a grade the form doesn't allow (${g}).`]);
+    const g = gradeOf(t), stored = S.grades[t.id];
+    if (!applies(t)) {
+      if (stored && stored !== "NP") issues.push(["bad", `${t.id} ${t.name} was graded ${stored}, but it isn't part of this evaluation (endorsement or class), so it will print NP.`]);
+      continue;
+    }
+    if (g === "U") issues.push(["bad", `${t.id} ${t.name} graded U.${S.notes[t.id] ? "" : " No note entered."}`, t.id]);
+    if (g === "QT" && !S.notes[t.id]) issues.push(["warn", `${t.id} ${t.name} graded QT with no note on the training given.`, t.id]);
+    if (verbalMinimum(t) && printGrade(t) === "NP") issues.push(["warn", `${t.id} ${t.name} will print NP, but CAPS 72-5 calls for at least a verbal evaluation.`, t.id]);
   }
-  if (!S.signatures.evalSignature) issues.push(["ok", "No evaluator signature drawn; the signature line will be left blank to sign by hand."]);
-  if (!S.signatures.pilotSignature) issues.push(["ok", "No pilot signature drawn; the signature line will be left blank to sign by hand."]);
+  for (const e of LAYOUT.endorsements) {
+    const mine = LAYOUT.tasks.filter(t => AREA_ENDO[roman(t)]?.includes(e.key));
+    if (awards(e.key) && mine.length && mine.every(t => printGrade(t) === "NP")) issues.push(["bad", `${e.label} is checked, but none of its tasks are graded.`, mine[0].id]);
+  }
+  const defaulted = LAYOUT.tasks.filter(t => applies(t) && !gradeOf(t) && !isRequired(t));
+  if (defaulted.length) issues.push(["warn", `${defaulted.length} ungraded task${defaulted.length > 1 ? "s" : ""} will print NP: ${defaulted.map(t => t.id).join(", ")}.`]);
+  const outside = LAYOUT.tasks.filter(t => !applies(t)).length;
+  if (outside) issues.push(["ok", `${outside} tasks outside this aircraft class or the checked endorsements are set to NP.`]);
+  if (!isAnnual() && !failed) {
+    const skipped = LAYOUT.tasks.filter(t => isMandatory(t) && printGrade(t) === "NP");
+    const endo = skipped.filter(t => AREA_ENDO[roman(t)]?.some(awards)).map(t => t.id);
+    if (endo.length) issues.push(["warn", `Abbreviated: italic endorsement tasks that will print NP: ${endo.join(", ")}.`]);
+    if (skipped.some(t => !AREA_ENDO[roman(t)])) issues.push(["warn", "Abbreviated: some italic Section 1 tasks will print NP. Make sure that's right if this adds a make and model."]);
+    if (LAYOUT.tasks.every(t => printGrade(t) === "NP")) issues.push(["bad", "No task is graded."]);
+  }
+  if (S.endorsements.instrumentDemo && S.ipcVerbal && !ipcActive()) issues.push(["bad", "The IPC date is missing or outside the six calendar months before the evaluation, so the verbal option doesn't apply."]);
   fitComments().then(r => {
-    if (r.overflow > 0) {
-      const li = document.createElement("li"); li.className = "bad";
+    if (r.overflow > 0 && !$("#overflowIssue")) {
+      const li = document.createElement("li"); li.className = "bad"; li.id = "overflowIssue";
       li.textContent = `Comments are too long: ${r.overflow} line(s) will be cut off.`;
       $("#issues").prepend(li);
     }
   });
-  $("#issues").innerHTML = issues.length
-    ? issues.map(([c, m]) => `<li class="${c}">${esc(m)}</li>`).join("")
+  const rows = [...status, ...blockers, ...issues];
+  $("#issues").innerHTML = rows.length
+    ? rows.map(([c, m, id]) => `<li class="${c}"${id ? ` data-go="${id}"` : ""}>${esc(m)}</li>`).join("")
     : `<li class="ok">Everything looks complete.</li>`;
+  $$("#issues [data-go]").forEach(li => li.onclick = () => go(li.dataset.go));
+  $("#genBtn").textContent = genLabel();
 }
 
 /* ---------- PDF generation ---------- */
@@ -659,10 +929,13 @@ function b64ToBytes(b64) {
   return out;
 }
 async function buildPdf() {
+  const missing = missingRequired();
+  if (missing.length) throw new Error(`${missing.length} required item(s) not complete`);
   const { PDFDocument, rgb } = PDFLib;
   const doc = await PDFDocument.load(b64ToBytes(PDF_B64));
   const pages = doc.getPages();
-  const { reg } = await getFonts(doc);
+  const { reg, bold } = await getFonts(doc);
+  const failed = rideFailed();
   const ink = rgb(0.03, 0.12, 0.42);
 
   const X = (page, x, y, s = 2.5) => {
@@ -688,19 +961,17 @@ async function buildPdf() {
   text("aircraft", S.aircraft);
   text("airplaneClass", S.airplaneClass);
   text("sortieTime", S.sortieTime);
-  text("otherEndorsements", S.otherEndorsements);
+  if (!failed) text("otherEndorsements", S.otherEndorsements);
   const ini = clean(S.evalInitials).trim().toUpperCase();
   if (ini) for (const e of LAYOUT.endorsements) {
-    if (!S.endorsements[e.key]) continue;
+    if (!awards(e.key)) continue;
     const size = 9, w = reg.widthOfTextAtSize(ini, size);
     pages[e.page].drawText(ini, { x: e.x - w / 2, y: e.y - 3.2, size, font: reg, color: ink });
   }
 
   // Grades
   for (const t of LAYOUT.tasks) {
-    const g = S.grades[t.id];
-    if (!g || !t.allowed.includes(g)) continue;
-    const [x, y] = t.boxes[g];
+    const [x, y] = t.boxes[printGrade(t)];
     X(pages[t.page], x, y);
   }
 
@@ -711,7 +982,7 @@ async function buildPdf() {
   text("flightReview", S.flightReview);
   text("cfiExp", S.cfiExp);
   {
-    const q = clean(S.qualsToRenew).trim();
+    const q = failed ? "" : clean(S.qualsToRenew).trim();
     if (q) {
       const f1 = LAYOUT.text.qualsToRenew, f2 = LAYOUT.text.qualsToRenew2;
       const words = q.split(/\s+/); let l1 = "";
@@ -723,6 +994,11 @@ async function buildPdf() {
   text("extCapId", S.extCapId);
 
   for (const [key, box] of Object.entries(LAYOUT.signatures)) {
+    if (failed && key === "evalSignature") {
+      // CAPS 72-5: marked in the signature block in lieu of a signature.
+      pages[box.page].drawText("UNSATISFACTORY", { x: box.x0, y: box.y0 + 3, size: 12, font: bold, color: ink });
+      continue;
+    }
     const src = S.signatures[key];
     if (!src) continue;
     const img = await doc.embedPng(await trimSig(src));
@@ -774,21 +1050,53 @@ function download(bytes, name, type) {
   document.body.appendChild(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 10000);
 }
+function genLabel() {
+  const n = missingRequired().length;
+  return n ? `${n} required item${n > 1 ? "s" : ""} left` : rideFailed() ? "Download unsatisfactory PDF" : "Download filled PDF";
+}
+// Ask the check pilot before every failed-ride download. Yes shows a reminder to
+// report the incident. Nothing is stored or printed. Resolves true to go ahead.
+function askMishap() {
+  const dlg = $("#mishapDlg");
+  const stage = yes => {
+    $("#mishapMore").style.display = yes ? "" : "none";
+    $("#mishapQ").style.display = $("#mishapYesNo").style.display = yes ? "none" : "";
+  };
+  stage(false);
+  return new Promise(resolve => {
+    let ok = false;
+    const finish = () => { ok = true; dlg.close(); };
+    $("#mishapYes").onclick = () => stage(true);
+    $("#mishapBack").onclick = () => stage(false);
+    $("#mishapNo").onclick = $("#mishapGo").onclick = finish;
+    $$("[data-mishap-cancel]").forEach(b => b.onclick = () => dlg.close());
+    dlg.onclose = () => resolve(ok);
+    dlg.showModal();
+  });
+}
 async function generate() {
+  const missing = missingRequired();
+  if (missing.length) {
+    toast(`Complete the ${missing.length} required item${missing.length > 1 ? "s" : ""} first`);
+    go(missing[0].id);
+    return;
+  }
+  if (anyFailure() && !await askMishap()) return;
   const btn = $("#genBtn"); btn.disabled = true; btn.textContent = "Building…";
   try {
     const bytes = await buildPdf();
     download(bytes, fileBase() + ".pdf", "application/pdf");
-    toast("PDF downloaded");
+    const cut = (await fitComments()).overflow;
+    toast(cut > 0 ? `PDF downloaded, but ${cut} comment line(s) were cut off` : "PDF downloaded");
   } catch (e) {
     console.error(e); toast("Couldn't build the PDF: " + e.message);
-  } finally { btn.disabled = false; btn.textContent = "Download filled PDF"; }
+  } finally { btn.disabled = false; btn.textContent = genLabel(); }
 }
 $("#genBtn").onclick = generate;
 $("#exportBtn").onclick = () => download(JSON.stringify(S, null, 1), fileBase() + ".json", "application/json");
 $("#importFile").onchange = async e => {
   const f = e.target.files[0]; if (!f) return;
-  try { S = Object.assign(blank(), JSON.parse(await f.text())); init(); save(); toast("Draft opened"); show("info"); }
+  try { S = fromDraft(JSON.parse(await f.text())); init(); save(); toast("Draft opened"); show("info"); }
   catch (err) { toast("That file isn't a draft from this tool"); }
   e.target.value = "";
 };
@@ -807,7 +1115,7 @@ init();
 show("info");
 // Expose for automated testing.
 window.__appReady = true;
-window.__capf = { buildPdf, get state() { return S; }, set state(v) { S = v; init(); } };
+window.__capf = { buildPdf, missingRequired, missingTasks, missingCert, missingDebrief, printGrade, rideFailed, anyFailure, commentText, get state() { return S; }, set state(v) { S = v; init(); } };
 </script>
 </body>
 </html>
